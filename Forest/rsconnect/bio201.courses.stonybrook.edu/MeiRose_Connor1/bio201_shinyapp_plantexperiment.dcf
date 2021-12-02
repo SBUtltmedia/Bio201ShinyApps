@@ -1,0 +1,13 @@
+name: bio201_shinyapp_plantexperiment
+title: Bio201_ShinyApp_PlantExperiment
+username: MeiRose_Connor1
+account: MeiRose_Connor1
+server: bio201.courses.stonybrook.edu
+hostUrl: https://bio201.courses.stonybrook.edu/__api__
+appId: 8
+bundleId: 32
+url: https://bio201.courses.stonybrook.edu/content/d51e8b27-2da4-4830-b70d-4f528070fcf9/
+when: 1637278217.46144
+lastSyncTime: 1637278217.46145
+asMultiple: FALSE
+asStatic: FALSE
