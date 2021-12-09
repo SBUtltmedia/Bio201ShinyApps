@@ -8,12 +8,16 @@ library(shiny)
 library(ggplot2)
 library(shinythemes)
 library(shinyjs)
+library(icesTAF)
 #
 shinyServer(function(input, output, session) {
     # variables used in multiple functions
     #
     # output directory to use when saving locally
-    output.dir <- getwd()
+  outputPath <- "/apps-data"
+  appName <- "Mouse"
+  output.dir <-  paste(outputPath, "/", appName, sep="")
+  mkdir(output.dir)
     # save file name here so that the file can update as new questions are answered
     fileName <- sprintf("%s_%s.csv", format(Sys.time(), "%Y%m%d-%H%M%OS"), digest::digest(runif(1)))
     rmarkdown::output_metadata$set("rsc_output_files" = list(fileName))

@@ -1,0 +1,13 @@
+name: download
+title: download
+username: meconnor
+account: meconnor
+server: bio201.courses.stonybrook.edu
+hostUrl: https://bio201.courses.stonybrook.edu/__api__
+appId: 17
+bundleId: 86
+url: https://bio201.courses.stonybrook.edu/content/8d4e1064-816f-4117-b594-596d4a4bc12c/
+when: 1639076777.1466
+lastSyncTime: 1639076777.14661
+asMultiple: FALSE
+asStatic: FALSE

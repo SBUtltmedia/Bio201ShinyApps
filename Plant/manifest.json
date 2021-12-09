@@ -1721,6 +1721,9 @@
     }
   },
   "files": {
+    ".RData": {
+      "checksum": "9c0a064357de7d26dab1877e849efd82"
+    },
     "packrat/desc/base64enc": {
       "checksum": "f58a2dd56eca3bfd55e81efe02467845"
     },
@@ -1914,22 +1917,64 @@
       "checksum": "c6039f9c14016c5176c016bd5bab9013"
     },
     "server.R": {
-      "checksum": "f1654e63532b34ea5d1f0d815b38594b"
+      "checksum": "4e5fb72d2cbd8e8e09b084779a6b333d"
     },
     "ui.R": {
-      "checksum": "cd51b485cdcefc89e3ed9fbcd301dd03"
+      "checksum": "c5d379edec7265500097d963e33dd46d"
     },
-    "www/BirdsEye.png": {
-      "checksum": "380bfc5dfecf6abc18c4e9a02327be44"
+    "www/BoxInitial.png": {
+      "checksum": "55744cf8fd70750c719e56df6a642dd8"
     },
-    "www/CompareForest.png": {
-      "checksum": "a476a4e7aab32079772210f840ab9a18"
+    "www/CellularRespiration.png": {
+      "checksum": "3b19e7977c24dace6176fcf0f9c60c83"
     },
-    "www/CompareMass_CarsTrees.png": {
-      "checksum": "425888195daf2fe9110d5405bd8b261d"
+    "www/CelluloseChain.png": {
+      "checksum": "7896552aa165b14c42886c97796233ee"
     },
-    "www/LoggingCombined.png": {
-      "checksum": "4c24415aa1c09f5097fe8578598b29b5"
+    "www/CO2O2.png": {
+      "checksum": "48bdf008d92f01daec9f414df8957463"
+    },
+    "www/CompareCelluloseGlucose.png": {
+      "checksum": "458b3fbad019a30639e3fa629f13d8db"
+    },
+    "www/DryMassPlant.png": {
+      "checksum": "88ae2faf391040c09dc469f682bebd2f"
+    },
+    "www/DryWetMass.png": {
+      "checksum": "68a11ccbf3a031b67594e8357fd6acec"
+    },
+    "www/DryWetMassPlantBasics.png": {
+      "checksum": "ad24748bcc26300eac34469441a3acfc"
+    },
+    "www/GasCanisters_WithLids.png": {
+      "checksum": "c6cdb71c2ed11945f612ebd9fd091e9d"
+    },
+    "www/GlucoseDestination.png": {
+      "checksum": "aca75581435ab1cab6364c8838ec87e5"
+    },
+    "www/Measurement.png": {
+      "checksum": "39673d13c36c4b29fc6ee0ff05e61339"
+    },
+    "www/MeasureSoil.png": {
+      "checksum": "2f296e45e080a207d210baa162ac36e2"
+    },
+    "www/Photosynthesis.png": {
+      "checksum": "fc35a433fa88fc0e81add6160bd7935e"
+    },
+    "www/Plant_Scales.png": {
+      "checksum": "65fd9ec801e2a54bddc153fbf21e6d58"
+    },
+    "www/PlantGrowth.png": {
+      "checksum": "ec71a3d120b066d5b524f655aa977bb8"
+    },
+    "www/PlantInitialFinal.png": {
+      "checksum": "1f78c1bf1b4a6b2a20c26df664065c53"
+    },
+    "www/PlantsNutrientComposition.png": {
+      "checksum": "cdd337492726e81815a019cbfcacb0cc"
+    },
+    "www/WetMassPlant.png": {
+      "checksum": "f9f9a2b57d085245b92052610aee6ff4"
     }
   },
   "users": null
