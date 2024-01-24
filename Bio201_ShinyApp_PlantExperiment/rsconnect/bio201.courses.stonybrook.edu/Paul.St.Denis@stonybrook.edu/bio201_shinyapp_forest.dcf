@@ -1,0 +1,12 @@
+name: bio201_shinyapp_plantexperiment
+title: Bio201_ShinyApp_PlantExperiment
+username: Xiqian.Chen@stonybrook.edu
+account: Xiqian.chen@stonybrook.edu
+server: bio201.courses.stonybrook.edu
+hostUrl: https://bio201.courses.stonybrook.edu/__api__
+appId: 8
+bundleId: 166
+url: https://bio201.courses.stonybrook.edu/PlantExperiment/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

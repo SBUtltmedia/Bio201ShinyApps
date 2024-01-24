@@ -1,0 +1,12 @@
+name: bio201_shinyapp_forest
+title: BIO201_ShinyApp_Forest
+username: Xiqian.Chen@stonybrook.edu
+account: Xiqian.Chen@stonybrook.edu
+server: bio201.courses.stonybrook.edu
+hostUrl: https://bio201.courses.stonybrook.edu/__api__
+appId: 24
+bundleId: 179
+url: https://bio201.courses.stonybrook.edu/content/9d6ae6b9-7059-4f46-bde1-fdc1c3e6f486/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

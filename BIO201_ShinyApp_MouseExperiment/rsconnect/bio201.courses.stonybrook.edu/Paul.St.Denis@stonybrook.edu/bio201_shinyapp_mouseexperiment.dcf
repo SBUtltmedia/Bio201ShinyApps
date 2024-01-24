@@ -1,0 +1,12 @@
+name: bio201_shinyapp_mouseexperiment
+title: BIO201_ShinyApp_MouseExperiment
+username: Xiqian.Chen@stonybrook.edu
+account: Xiqian.Chen@stonybrook.edu
+server: bio201.courses.stonybrook.edu
+hostUrl: https://bio201.courses.stonybrook.edu/__api__
+appId: 10
+bundleId: 175
+url: https://bio201.courses.stonybrook.edu/MouseExperiment/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
