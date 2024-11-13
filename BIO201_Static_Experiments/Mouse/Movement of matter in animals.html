@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://bio201.courses.stonybrook.edu/MouseExperiment/ -->
+<html class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<base href="_w_4f4ffe67/">--><base href=".">
+    <script type="text/javascript">
+(function() {
+  var workerId = '_w_4f4ffe67';
+  // remove base href if worker ID is in url
+  if (window.location.href.indexOf(workerId) > 0) {
+    document.querySelector('base').removeAttribute('href');
+  }
+})();
+</script>
+
+      <script type="text/javascript">
+      var __connect = {
+        shinyPre101: false
+      }
+      </script>
+      
+  
+  <script type="application/shiny-singletons">add739c82ab207ed2c80be4b7e4b181525eb7a75</script>
+  <script type="application/html-dependencies">jquery[3.6.0];shiny-css[1.8.0];shiny-javascript[1.8.0];bootstrap[3.4.1]</script>
+<script src="./files/jquery.min.js"></script>
+<link href="./files/shiny.min.css" rel="stylesheet">
+<script src="./files/shiny.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="./files/bootstrap.min.css" rel="stylesheet">
+<link href="./files/bootstrap-accessibility.min.css" rel="stylesheet">
+<script src="./files/bootstrap.min.js"></script>
+<script src="./files/bootstrap-accessibility.min.js"></script>  <title>Movement of matter in animals</title>
+  <link rel="stylesheet" type="text/css" href="./files/cosmo.min.css">
+  <style>.shinyjs-hide { display: none !important; }</style>
+  <script>Shiny.addCustomMessageHandler('shinyjs-show', function(params) { shinyjs.debugMessage('shinyjs: calling function "show" with parameters:'); shinyjs.debugMessage(params); shinyjs.show(params);});
+Shiny.addCustomMessageHandler('shinyjs-hide', function(params) { shinyjs.debugMessage('shinyjs: calling function "hide" with parameters:'); shinyjs.debugMessage(params); shinyjs.hide(params);});
+Shiny.addCustomMessageHandler('shinyjs-toggle', function(params) { shinyjs.debugMessage('shinyjs: calling function "toggle" with parameters:'); shinyjs.debugMessage(params); shinyjs.toggle(params);});
+Shiny.addCustomMessageHandler('shinyjs-enable', function(params) { shinyjs.debugMessage('shinyjs: calling function "enable" with parameters:'); shinyjs.debugMessage(params); shinyjs.enable(params);});
+Shiny.addCustomMessageHandler('shinyjs-disable', function(params) { shinyjs.debugMessage('shinyjs: calling function "disable" with parameters:'); shinyjs.debugMessage(params); shinyjs.disable(params);});
+Shiny.addCustomMessageHandler('shinyjs-toggleState', function(params) { shinyjs.debugMessage('shinyjs: calling function "toggleState" with parameters:'); shinyjs.debugMessage(params); shinyjs.toggleState(params);});
+Shiny.addCustomMessageHandler('shinyjs-addClass', function(params) { shinyjs.debugMessage('shinyjs: calling function "addClass" with parameters:'); shinyjs.debugMessage(params); shinyjs.addClass(params);});
+Shiny.addCustomMessageHandler('shinyjs-removeClass', function(params) { shinyjs.debugMessage('shinyjs: calling function "removeClass" with parameters:'); shinyjs.debugMessage(params); shinyjs.removeClass(params);});
+Shiny.addCustomMessageHandler('shinyjs-toggleClass', function(params) { shinyjs.debugMessage('shinyjs: calling function "toggleClass" with parameters:'); shinyjs.debugMessage(params); shinyjs.toggleClass(params);});
+Shiny.addCustomMessageHandler('shinyjs-html', function(params) { shinyjs.debugMessage('shinyjs: calling function "html" with parameters:'); shinyjs.debugMessage(params); shinyjs.html(params);});
+Shiny.addCustomMessageHandler('shinyjs-onevent', function(params) { shinyjs.debugMessage('shinyjs: calling function "onevent" with parameters:'); shinyjs.debugMessage(params); shinyjs.onevent(params);});
+Shiny.addCustomMessageHandler('shinyjs-removeEvent', function(params) { shinyjs.debugMessage('shinyjs: calling function "removeEvent" with parameters:'); shinyjs.debugMessage(params); shinyjs.removeEvent(params);});
+Shiny.addCustomMessageHandler('shinyjs-alert', function(params) { shinyjs.debugMessage('shinyjs: calling function "alert" with parameters:'); shinyjs.debugMessage(params); shinyjs.alert(params);});
+Shiny.addCustomMessageHandler('shinyjs-logjs', function(params) { shinyjs.debugMessage('shinyjs: calling function "logjs" with parameters:'); shinyjs.debugMessage(params); shinyjs.logjs(params);});
+Shiny.addCustomMessageHandler('shinyjs-runjs', function(params) { shinyjs.debugMessage('shinyjs: calling function "runjs" with parameters:'); shinyjs.debugMessage(params); shinyjs.runjs(params);});
+Shiny.addCustomMessageHandler('shinyjs-reset', function(params) { shinyjs.debugMessage('shinyjs: calling function "reset" with parameters:'); shinyjs.debugMessage(params); shinyjs.reset(params);});
+Shiny.addCustomMessageHandler('shinyjs-delay', function(params) { shinyjs.debugMessage('shinyjs: calling function "delay" with parameters:'); shinyjs.debugMessage(params); shinyjs.delay(params);});
+Shiny.addCustomMessageHandler('shinyjs-click', function(params) { shinyjs.debugMessage('shinyjs: calling function "click" with parameters:'); shinyjs.debugMessage(params); shinyjs.click(params);});
+Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debugMessage('shinyjs: calling function "refresh" with parameters:'); shinyjs.debugMessage(params); shinyjs.refresh(params);});</script>
+  <script src="./files/shinyjs-default-funcs.js"></script>
+  <script>shinyjs.debug = false;</script>
+<script src="./files/sockjs.min.js"></script>
+<script src="./files/shiny-server-client.min.js"></script>
+<script>preShinyInit({reconnect:true,reconnectTimeout:15000,disableProtocols:["htmlfile","xdr-streaming","xdr-polling"],token:true,workerId:true,subappTag:true,extendSession:true,fixupInternalLinks:true});</script>
+<link rel="stylesheet" type="text/css" href="./files/rstudio-connect.css">
+<script src="chrome-extension://bgafccceonganlcmcojjacanoadnhmac/allowClipboardClient.js"></script><script src="chrome-extension://bgafccceonganlcmcojjacanoadnhmac/common.js"></script></head>
+<body class="bslib-page-navbar">
+  
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <span class="navbar-brand">Movement of matter in animals</span>
+        </div>
+        <ul class="nav navbar-nav nav-underline" data-tabsetid="4684">
+          <li class="active">
+            <a href="https://bio201.courses.stonybrook.edu/MouseExperiment/_w_4f4ffe67/#tab-4684-1" data-toggle="tab" data-bs-toggle="tab" data-value="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="https://bio201.courses.stonybrook.edu/MouseExperiment/_w_4f4ffe67/#tab-4684-2" data-toggle="tab" data-bs-toggle="tab" data-value="Experiment 1">Experiment 1</a>
+          </li>
+          <li>
+            <a href="https://bio201.courses.stonybrook.edu/MouseExperiment/_w_4f4ffe67/#tab-4684-3" data-toggle="tab" data-bs-toggle="tab" data-value="Experiment 2">Experiment 2</a>
+          </li>
+          <li>
+            <a href="https://bio201.courses.stonybrook.edu/MouseExperiment/_w_4f4ffe67/#tab-4684-4" data-toggle="tab" data-bs-toggle="tab" data-value="Experiment 3">Experiment 3</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="tab-content" data-tabsetid="4684">
+        <div class="tab-pane active" data-value="Introduction" id="tab-4684-1">
+          <div class="container-fluid">
+            <h3>Your assignment</h3>
+            <p>
+              In this activity, you will work through questions about three experiments with a mouse.
+              You will predict what will happen to the mass of the mouse and other objects in the experiments.
+              Over the course of the activity, you will shift perspectives from thinking about the parts of a system to thinking about the system as a whole.
+            </p>
+            <p class="text-warning">
+              <strong>Instructions (read carefully!):</strong>
+            </p>
+            <p>
+              Use the tabs at the top of the page to navigate through the experiments.
+              Begin with Experiment 1.
+              As you answer questions, new questions will appear below.
+              Take time to think before selecting each answer.
+              <em>You will only have one chance to answer each question.</em>
+            </p>
+            <div class="row">
+              <div class="col-sm-12">
+                <h4>Enter your email</h4>
+                <p>
+                  Before beginning the activity, make sure that your 
+                  <strong>stonybrook.edu</strong>
+                   email has been recorded in the box below.
+                </p>
+                <div class="form-group shiny-input-container" style="width:100%;">
+                  <label class="control-label" id="name-label" for="name"></label>
+                  <input id="name" type="text" class="shiny-input-text form-control shinyjs-resettable shiny-bound-input" value="Enter email here before beginning Experiment 1." data-shinyjs-resettable-id="name" data-shinyjs-resettable-type="Text" data-shinyjs-resettable-value="Enter email here before beginning Experiment 1." aria-live="polite">
+                </div>
+                <button id="NameButton" type="button" class="btn btn-default action-button shiny-bound-input">The email above is correct</button>
+                <div id="FeedbackNames" class="shinyjs-hide">
+                  <p class="text-warning">email recorded, please begin Experiment 1 using the tabs at the top of the page.</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:10px; padding-right:10px; padding-top:35px; padding-bottom:5px">
+                <p style="font-size:12px;">
+                  <strong>Sources used to create this activity:</strong>
+                </p>
+                <p style="font-size:12px;">
+                  Greenbaum, A. L. 1953. Changes in Body Composition and Respiratory Quotient of Adult Female Rats Treated with Purified Growth Hormone.
+                  <em>Biochemical Journal</em>
+                   54 (3): 400–407.
+                </p>
+                <p style="font-size:12px;">
+                  Rosenmann, M, and P Morrison. 1974. Maximum Oxygen Consumption and Heat Loss Facilitation in Small Homeotherms by He-O2.
+                  <em>American Journal of Physiology</em>
+                   226 (3): 490–95.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" data-value="Experiment 1" id="tab-4684-2">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-12">
+                <h3>Experiment 1: within-system perspective</h3>
+                <p class="text-primary">There are six questions in this section (1A-F).</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <p>
+                  You decide that you want to conduct an experiment with a mouse in order to better understand changes in matter over time.
+                  You measure out 20 grams (g) of food and 100 g of water and place it in an open cage (see the image to the right for the experimental set-up).
+                  This is more food than the mouse normally eats.
+                  You let the mouse eat as much food and drink as much water as it likes over the course of 12 hours.
+                  Once every hour, you weigh the food, the water, and the mouse individually.
+                  At the beginning of the experiment, the mouse weighs 30 g.
+                </p>
+                <p>This first set of questions are very basic; they are designed to help you become familiar with the experimental set up.</p>
+              </div>
+              <div class="col-sm-6">
+                <img src="./files/ExperimentOpenCage_WithScales.png" width="600px">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <img src="./files/Food.png">
+              </div>
+              <div class="col-sm-4">
+                <img src="./files/Water.png">
+              </div>
+              <div class="col-sm-4">
+                <img src="./files/Mouse.png">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <div aria-labelledby="1A-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-disabled shinyjs-resettable shiny-bound-input disabled" id="1A" role="radiogroup" data-shinyjs-resettable-id="1A" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected" disabled="disabled">
+                  <label class="control-label" id="1A-label" for="1A">(A) What do you predict will happen to the mass of the food during Experiment 1?</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1A" value="None selected" checked="checked" disabled="" class="disabled">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1A" value="A" disabled="" class="disabled">
+                        <span>Decrease slightly</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1A" value="B" disabled="" class="disabled">
+                        <span>Increase slightly</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1A" value="C" disabled="" class="disabled">
+                        <span>Stay the same</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div aria-labelledby="1B-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-disabled shinyjs-resettable shiny-bound-input disabled" id="1B" role="radiogroup" data-shinyjs-resettable-id="1B" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected" disabled="disabled">
+                  <label class="control-label" id="1B-label" for="1B">(B) What do you predict will happen to the mass of the water during Experiment 1?</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1B" value="None selected" checked="checked" disabled="" class="disabled">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1B" value="A" disabled="" class="disabled">
+                        <span>Decrease slightly</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1B" value="B" disabled="" class="disabled">
+                        <span>Increase slightly</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1B" value="C" disabled="" class="disabled">
+                        <span>Stay the same</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div aria-labelledby="1C-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-disabled shinyjs-resettable shiny-bound-input disabled" id="1C" role="radiogroup" data-shinyjs-resettable-id="1C" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected" disabled="disabled">
+                  <label class="control-label" id="1C-label" for="1C">(C) What do you predict will happen to the mass of the mouse during Experiment 1?</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1C" value="None selected" checked="checked" disabled="" class="disabled">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1C" value="A" disabled="" class="disabled">
+                        <span>Decrease slightly</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1C" value="B" disabled="" class="disabled">
+                        <span>Increase slightly</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1C" value="C" disabled="" class="disabled">
+                        <span>Stay the same</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" align="center">
+                <p>If you are having trouble submitting your responses, make sure: 1) you filled in your name on the 'Introduction' tab, and 2) you have selected answers for 1 A-C.</p>
+                <p class="text-warning">
+                  <em>When you press the submit button, your responses will be recorded and you will no longer be able to change your answer.</em>
+                </p>
+                <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input disabled" id="Submit1ABC" type="button" disabled="">Submit 1 A-C</button>
+                <p></p>
+                <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input disabled" id="Experiment1" type="button" disabled="">Conduct Experiment 1</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="shiny-plot-output html-fill-item shiny-bound-output" id="FoodMass" style="width:100%;height:400px;" aria-live="polite"></div>
+              </div>
+              <div class="col-sm-4">
+                <div class="shiny-plot-output html-fill-item shiny-bound-output" id="WaterMass" style="width:100%;height:400px;" aria-live="polite"></div>
+              </div>
+              <div class="col-sm-4">
+                <div class="shiny-plot-output html-fill-item shiny-bound-output" id="MouseMass" style="width:100%;height:400px;" aria-live="polite"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:5px; padding-top:5px; padding-bottom:15px">
+                <button class="btn btn-default action-button shinyjs-hide shiny-bound-input" id="Next1D" type="button">Move on to the next question</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div aria-labelledby="1D-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="1D" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="1D" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
+                  <label class="control-label" id="1D-label" for="1D">(D) Choose the best explanation for the patterns observed in 1A-C.</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1D" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1D" value="A">
+                        <span>The mouse ate some of the food and gained mass. All of the food that the mouse ate was added to its body.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1D" value="B">
+                        <span>The mouse ate some of the food and gained mass. Some of the food that the mouse ate was added to its body, the rest left the body as poop.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1D" value="C">
+                        <span>The mouse ate some of the food and gained mass. Some of the food that the mouse ate was added to its body, and the rest left the body as carbon dioxide.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1D" value="D">
+                        <span>The mouse ate some of the food and gained mass. Some of the food that the mouse ate was added to its body, some left the body as poop, and some left the body as carbon dioxide.</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit1D" type="button" disabled="">Submit 1D</button>
+                <div id="Feedback1D" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>
+                      When the mouse ate the food, the matter in the food was brought into the digestive tract of its body and broken down into smaller pieces of matter.
+                      Some of the broken down matter could not be digested any further and left the body as waste (e.g., poop).
+                      The rest of the matter was either added to tissues within the mouse’s body (i.e. contributed to growth) OR was used as inputs into cellular respiration (i.e., contributed to metabolism).
+                      Molecules that undergo cellular respiration leave the body as gases (i.e., carbon dioxide).
+                      Therefore, some of the food left the mouse’s body as poop, some left as carbon dioxide, and some stayed inside the mouse’s body and contributed to growth.
+                    </p>
+                  </ul>
+                  <button id="Next1E" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next question</button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:10px; padding-right:10px; padding-top:10px; padding-bottom:10px">
+                <div id="Introduction1EF" class="shinyjs-hide">
+                  <p>
+                    Over the course of the 12-hour experiment, the mouse ate food, pooped, and gained body mass.
+                    The mass of the food eaten, poop produced, and body mass gained was measured at the end of the experiment (i.e., at hour 12) and is shown on the bar graph below.
+                    You can assume that the experiment lasted long enough for all of the food that was eaten to have left the mouse's digestive tract and become incorporated into tissues.
+                    Note that the mouse also drank water and urinated, but this is not important to consider for the following questions.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="shiny-plot-output html-fill-item shinyjs-hide shiny-bound-output" id="MassBreakdown" style="width:100%;height:400px;" aria-live="polite"></div>
+              </div>
+              <div class="col-sm-6">
+                <div aria-labelledby="1E-label" class="form-group shiny-input-checkboxgroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="1E" role="group" style="width:100%;" data-shinyjs-resettable-id="1E" data-shinyjs-resettable-type="CheckboxGroup" data-shinyjs-resettable-value="[&quot;None selected&quot;]">
+                  <label class="control-label" id="1E-label" for="1E">(E) According to the graph, which of the following statements are correct?</label>
+                  <div class="shiny-options-group">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="1E" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="1E" value="A">
+                        <span>The mass of the mouse's poop + the mass gained by the end of the experiment = nearly all of the mass that was in the food that the mouse ate.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="1E" value="B">
+                        <span>The mass of the mouse's poop + the mass gained by the end of the experiment  = only some of the mass that was in the food that the mouse ate.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="1E" value="C">
+                        <span>When considering the mass of the inputs (food eaten) and outputs (poop and body growth by the end of the experiment) of the mouse, approximately 1-2 g of mass are not included in this bar graph.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="1E" value="D">
+                        <span>When considering the mass of the inputs (food eaten) and outputs (poop and body growth by the end of the experiment) in the mouse experiment, approximately 3-4 g of mass are not included in this bar graph.</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div id="Submit1E" class="shinyjs-hide">
+                  <p>If you are having trouble submitting your response, make sure you have unchecked 'None selected.'</p>
+                  <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input disabled" id="Submit1E" type="button" disabled="">Submit 1E</button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div id="Feedback1E" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>
+                      The mass of the food eaten by the mouse does NOT equal the mass of the mouse’s poop and the mass its body gained by the end of the experiment.
+                      Only SOME of the matter in the food a mouse eats can be found in its poop or in the mass its body gains by the end of the experiment.
+                      There is matter (and its associated mass) missing from this graph.
+                      How do we know that there is missing mass?
+                      When you add up the mass of the mouse’s poop and the mass it gained (growth), you find that only ~1 gram of mass is accounted for at the end of the experiment.
+                      Therefore, you can subtract the ~1 g of mass that is accounted for from the ~4.5 g of food that was eaten during the experiment and find that ~3.5 g of mass is missing.
+                      Note that the values may be slightly different each time you run this experiment, but the general pattern is the same.
+                    </p>
+                  </ul>
+                  <button id="Next1F" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next question</button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:5px; padding-top:15px; padding-bottom:5px">
+                <div aria-labelledby="1F-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="1F" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="1F" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
+                  <label class="control-label" id="1F-label" for="1F">(F) Approximately 3-4 g of mass from the food that was eaten remains unaccounted for at the end of the experiment. Where did the mass go? Choose the best explanation.</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1F" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1F" value="A">
+                        <span>The ~3-4 g of mass was released by the body as sweat.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1F" value="B">
+                        <span>The ~3-4 g of mass was burned during metabolism, and no longer exists.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1F" value="C">
+                        <span>The ~3-4 g of mass was exhaled as carbon dioxide.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="1F" value="D">
+                        <span>The ~3-4 g of mass was converted into energy to be used by the body.</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit1F" type="button" disabled="">Submit 1F</button>
+                <div id="Feedback1F" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>
+                      During digestion, the food was broken down into smaller bits.
+                      Some of the small molecules were used as inputs for cellular respiration, which provided the mouse energy to perform important metabolic activities.
+                      Remember that in cellular respiration, most of the energy of the input molecules remains in the body, but the matter (and its associated mass) leaves the body as carbon dioxide.
+                    </p>
+                    <p>While some of the matter in the food a mouse eats can be found in its sweat, this would constitute a very small amount of the mass that came from the food (&lt; 0.01 g), and therefore would NOT be the best answer.</p>
+                    <p>
+                      Matter (and its associated mass) cannot be created or destroyed and cannot be converted into energy in biological systems.
+                      Therefore, the ~3-4 g of missing mass must still exist somewhere (It CANNOT turn into energy in a biological system).
+                    </p>
+                    <p>Therefore, the missing mass is explained by the carbon dioxide gas that was exhaled (Remember--carbon dioxide gas has mass!).</p>
+                  </ul>
+                  <p class="text-warning">End of Experiment 1, please move on to Experiment 2 using the tabs at the top of the page.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" data-value="Experiment 2" id="tab-4684-3">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-12">
+                <h3>Experiment 2: whole-system perspective, sealed cage</h3>
+                <p class="text-primary">There are six questions in this section (2A-F).</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <p>
+                  The next day, you try a different experiment.
+                  This time, you place a mouse (30 g) in a SEALED cage with a supply of food (20 g) and water (100 g) (see the image to the right for the experimental set-up).
+                  No air can get in or out of this cage, but there is plenty of air inside for the mouse to breathe.
+                  In Experiment 2, you measure the mass of the entire cage over time.
+                  At the beginning of the experiment, you weigh the cage (containing the mouse, water and food). The cage and all of its contents weighs 2,500 g.
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <img src="./files/ExperimentClosedCage.png" width="500px">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6" style="padding-left:5px; padding-right:5px; padding-top:5px; padding-bottom:15px">
+                <div aria-labelledby="2A-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-disabled shinyjs-resettable shiny-bound-input disabled" id="2A" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="2A" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected" disabled="disabled">
+                  <label class="control-label" id="2A-label" for="2A">(A) You leave the entire sealed cage on the scale for 12 hours, and you measure its mass once every hour. The mouse’s waste (urine and feces) is also in the cage. What do you predict will happen to the mass of the cage and its contents during Experiment 2?</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2A" value="None selected" checked="checked" disabled="" class="disabled">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2A" value="A" disabled="" class="disabled">
+                        <span>Decrease slightly</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2A" value="B" disabled="" class="disabled">
+                        <span>Increase slightly</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2A" value="C" disabled="" class="disabled">
+                        <span>Stay the same</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input disabled" id="Submit2A" type="button" disabled="">Submit 2A</button>
+                <p></p>
+                <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input disabled" id="Experiment2" type="button" disabled="">Conduct Experiment 2</button>
+                <div id="Feedback2A" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>Mass cannot enter or leave the system so the overall mass of the cage and its contents does not change.</p>
+                  </ul>
+                  <button id="Next2BC" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next question</button>
+                </div>
+              </div>
+              <div class="col-sm-6" style="padding-left:5px; padding-right:5px; padding-top:5px; padding-bottom:15px">
+                <div class="shiny-plot-output html-fill-item shiny-bound-output" id="ClosedCage" style="width:100%;height:400px;" aria-live="polite"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div id="Experiment2GasIntro" class="shinyjs-hide">
+                  <h4>Gases in the sealed cage</h4>
+                  <p>
+                    Even though the mass of the system as a whole (the cage and its contents) doesn't change over time, the mass of the components that make up the system can change.
+                    Using a probe that can detect gases in the air, you measure the mass of the gases inside the cage before the experiment begins (shown in the figure to the right).
+                    Notice that there is a lot more oxygen in the air than carbon dioxide, though both gases are important in biological systems.
+                  </p>
+                  <div class="shiny-plot-output html-fill-item shiny-bound-output" id="GasesBarChart" style="width:60%;height:400px;" aria-live="polite"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div aria-labelledby="2B-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="2B" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="2B" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
+                  <label class="control-label" id="2B-label" for="2B">(B) What do you predict will happen to the mass of the carbon dioxide gas inside the cage during Experiment 2?</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2B" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2B" value="A">
+                        <span>Decrease slightly</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2B" value="B">
+                        <span>Increase slightly</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2B" value="C">
+                        <span>Stay the same</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div aria-labelledby="2C-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="2C" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="2C" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
+                  <label class="control-label" id="2C-label" for="2C">(C) What do you predict will happen to the mass of the oxygen gas inside the cage during Experiment 2?</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2C" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2C" value="A">
+                        <span>Decrease slightly</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2C" value="B">
+                        <span>Increase slightly</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2C" value="C">
+                        <span>Stay the same</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" align="center">
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit2BC" type="button" disabled="">Submit 2BC</button>
+                <p></p>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Experiment2Air" type="button" disabled="">View data for gas mass</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="shiny-plot-output html-fill-item shiny-bound-output" id="CO2Mass" style="width:100%;height:400px;" aria-live="polite"></div>
+              </div>
+              <div class="col-sm-6">
+                <div class="shiny-plot-output html-fill-item shiny-bound-output" id="O2Mass" style="width:100%;height:400px;" aria-live="polite"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:5px; padding-top:5px; padding-bottom:15px">
+                <button class="btn btn-default action-button shinyjs-hide shiny-bound-input" id="Next2D" type="button">Move on to the next question</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div aria-labelledby="2D-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="2D" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="2D" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
+                  <label class="control-label" id="2D-label" for="2D">(D) Choose the best causal explanation(s) for the patterns observed in 2B and 2C.</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2D" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2D" value="A">
+                        <span>The mass of carbon dioxide gas in the air increases because the mouse is adding more of this molecule to the air by exhaling.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2D" value="B">
+                        <span>The mass of oxygen gas in the air decreases because the mouse is removing this molecule from the air by inhaling.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2D" value="C">
+                        <span>All of the above</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2D" value="D">
+                        <span>None of the above</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit2D" type="button" disabled="">Submit 2D</button>
+                <div id="Feedback2D" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>
+                      When the mouse breathes, it inhales oxygen gas and exhales carbon dioxide gas.
+                      Therefore, the mass of oxygen gas in the air decreases because the mouse is removing this molecule from the air when it inhales.
+                      Similarly, the mass of carbon dioxide gas in the air increases because the mouse is adding more of this molecule to the air when it exhales.
+                    </p>
+                  </ul>
+                  <button id="Next2E" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next question</button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:5px; padding-top:15px; padding-bottom:5px">
+                <div aria-labelledby="2E-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="2E" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="2E" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
+                  <label class="control-label" id="2E-label" for="2E">(E) In 2B and 2C, you measured the mass of carbon dioxide and oxygen gases inside the cage. What do you predict happened to the TOTAL mass of the air inside the cage during Experiment 2?</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2E" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2E" value="A">
+                        <span>Decrease slightly</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2E" value="B">
+                        <span>Increase slightly</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2E" value="C">
+                        <span>Stay the same</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit2E" type="button" disabled="">Submit 2E</button>
+                <div id="Feedback2E" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>The total mass of the air inside the cage increases during Experiment 2.</p>
+                  </ul>
+                  <div class="shiny-plot-output html-fill-item shiny-bound-output" id="AirMass" style="width:60%;height:400px;" aria-live="polite"></div>
+                  <button id="Next2F" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next question</button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div aria-labelledby="2F-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="2F" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="2F" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
+                  <label class="control-label" id="2F-label" for="2F">(F) Choose the best causal explanation for the patterns observed in 2E.</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2F" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2F" value="A">
+                        <span>The total mass of the air stayed about the same because the carbon dioxide gas that was exhaled left the cage.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2F" value="B">
+                        <span>The total mass of the air stayed about the same because carbon dioxide gas that was exhaled has a similar mass to the oxygen gas that was inhaled.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2F" value="C">
+                        <span>The total mass of the air increased because the carbon dioxide gas that was exhaled has more mass than the oxygen gas that was inhaled.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2F" value="D">
+                        <span>The total mass of the air increased because the molecules became more densely packed through time.</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit2F" type="button" disabled="">Submit 2F</button>
+                <div id="Feedback2F" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>
+                      Because the mouse is in a sealed cage, matter could not enter or leave the system.
+                      Carbon dioxide and oxygen molecules do NOT have similar masses.
+                      Oxygen gas is composed of two oxygen atoms, whereas carbon dioxide gas is composed of two oxygen atoms AND a carbon atom.
+                      Therefore, each molecule of carbon dioxide gas is exactly one carbon atom heavier than each molecule of oxygen gas.
+                    </p>
+                    <p>
+                      Both oxygen gas (as an input) and carbon dioxide gas (as an output) are involved in cellular respiration and they enter and exit the mouse’s body through breathing.
+                      The number of oxygen gas molecules that go into cellular respiration is the same as the number of carbon dioxide molecules that are released.
+                      Because carbon dioxide gas has MORE mass than oxygen gas, the total mass of the air increased as the mouse breathed.
+                    </p>
+                    <p>
+                      While the air of the sealed cage probably would become more densely packed as oxygen gas is replaced by carbon dioxide gas, the increase in density is not the best causal explanation of the air’s increase in mass.
+                      The cause of the increase in the mass of the air is that the carbon dioxide gas that was exhaled has more mass than the oxygen gas that was inhaled.
+                    </p>
+                  </ul>
+                  <p class="text-warning">End of Experiment 2, please move on to Experiment 3 using the tabs at the top of the page.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" data-value="Experiment 3" id="tab-4684-4">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-12">
+                <h3>Experiment 3: whole-system perspective, open cage</h3>
+                <p class="text-primary">There are two questions in this section (3A-B).</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <p>
+                  You conduct one final experiment.
+                  You place a mouse (30 g) in an OPEN cage with a new supply of food (20 g) and water (100 g).
+                  You let the mouse eat as much food and drink as much water as it likes over the course of 12 hours.
+                  Just like in Experiment 1, the mouse will gain a little bit of mass as it eats the food and drinks the water.
+                  Air can pass freely in or out of this cage.
+                  In Experiment 3, you again want to measure the mass of the entire cage and its contents over time.
+                  At the beginning of the experiment, you weigh the cage (containing the mouse, water and food).
+                  The mouse’s waste (urine, feces) is also in the cage.
+                  The cage and all of its contents initially weighs 2,500 g.
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <img src="./files/ExperimentOpenCage.png" width="500px">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div aria-labelledby="3A-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-disabled shinyjs-resettable shiny-bound-input disabled" id="3A" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="3A" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected" disabled="disabled">
+                  <label class="control-label" id="3A-label" for="3A">(A) You leave the entire cage on the scale for one day, and you measure its mass once every hour. What do you predict will happen to the mass of the cage and its contents during Experiment 3?</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3A" value="None selected" checked="checked" disabled="" class="disabled">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3A" value="A" disabled="" class="disabled">
+                        <span>Decrease slightly</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3A" value="B" disabled="" class="disabled">
+                        <span>Increase slightly</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3A" value="C" disabled="" class="disabled">
+                        <span>Stay the same</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input disabled" id="Submit3A" type="button" disabled="">Submit 3A</button>
+                <p></p>
+                <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input disabled" id="Experiment3" type="button" disabled="">Conduct Experiment 3</button>
+              </div>
+              <div class="col-sm-6">
+                <div class="shiny-plot-output html-fill-item shiny-bound-output" id="OpenCage" style="width:100%;height:400px;" aria-live="polite"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:5px; padding-top:5px; padding-bottom:15px">
+                <button class="btn btn-default action-button shinyjs-hide shiny-bound-input" id="Next3B" type="button">Move on to the next question</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div aria-labelledby="3B-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="3B" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="3B" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
+                  <label class="control-label" id="3B-label" for="3B">(B) Choose the best explanation for the pattern observed in 3A.</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3B" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3B" value="A">
+                        <span>The mass of the cage and its contents decreased because the mouse incorporated gases from the air into its body tissues, causing the air to become lighter.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3B" value="B">
+                        <span>The mass of the cage and its contents decreased because the mouse incorporated matter from the food into its body, causing the food to become lighter.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3B" value="C">
+                        <span>The mass of the cage and its contents decreased because as the mouse respired, mass left the system as carbon dioxide gas, causing it to become lighter.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3B" value="D">
+                        <span>The mass of the cage and its contents decreased because the mouse’s water evaporated from the open system, causing it to become lighter.</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit3B" type="button" disabled="">Submit 3B</button>
+                <div id="Feedback3B" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>
+                      Because the cage is open, the carbon dioxide gas that came from the mouse’s body dispersed into the surrounding air.
+                      No other matter was added to the cage and its contents, so the mass of the overall system had to decrease.
+                      The evaporation of the mouse’s water may contribute to a very small amount of mass loss, but the amount of mass lost from evaporation is much smaller than the amount of mass lost from exhaling carbon dioxide.
+                    </p>
+                  </ul>
+                  <p class="text-success">End of the activity, all of your responses have been recorded.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+
+<div id="ss-connect-dialog" style="display: none;"></div><div id="ss-overlay" class="ss-gray-out" style="display: none;"></div><div class="shiny-server-account">  Logged in as <span class="shiny-server-username">Paul.St.Denis@stonybrook.edu</span>  <a href="https://bio201.courses.stonybrook.edu/MouseExperiment/_w_4f4ffe67/__logout__">Logout</a></div></body></html>

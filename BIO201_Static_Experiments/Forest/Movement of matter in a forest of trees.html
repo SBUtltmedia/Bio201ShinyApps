@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://bio201.courses.stonybrook.edu/ForestExperiment/ -->
+<html class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<base href="_w_6f62ce13/">--><base href=".">
+    <script type="text/javascript">
+(function() {
+  var workerId = '_w_6f62ce13';
+  // remove base href if worker ID is in url
+  if (window.location.href.indexOf(workerId) > 0) {
+    document.querySelector('base').removeAttribute('href');
+  }
+})();
+</script>
+
+      <script type="text/javascript">
+      var __connect = {
+        shinyPre101: false
+      }
+      </script>
+      
+  
+  <script type="application/shiny-singletons">add739c82ab207ed2c80be4b7e4b181525eb7a75</script>
+  <script type="application/html-dependencies">jquery[3.6.0];shiny-css[1.8.0];shiny-javascript[1.8.0];bootstrap[3.4.1]</script>
+<script src="./files/jquery.min.js"></script>
+<link href="./files/shiny.min.css" rel="stylesheet">
+<script src="./files/shiny.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="./files/bootstrap.min.css" rel="stylesheet">
+<link href="./files/bootstrap-accessibility.min.css" rel="stylesheet">
+<script src="./files/bootstrap.min.js"></script>
+<script src="./files/bootstrap-accessibility.min.js"></script>  <title>Movement of matter in a forest of trees</title>
+  <link rel="stylesheet" type="text/css" href="./files/cosmo.min.css">
+
+  <script>Shiny.addCustomMessageHandler('shinyjs-show', function(params) { shinyjs.debugMessage('shinyjs: calling function "show" with parameters:'); shinyjs.debugMessage(params); shinyjs.show(params);});
+Shiny.addCustomMessageHandler('shinyjs-hide', function(params) { shinyjs.debugMessage('shinyjs: calling function "hide" with parameters:'); shinyjs.debugMessage(params); shinyjs.hide(params);});
+Shiny.addCustomMessageHandler('shinyjs-toggle', function(params) { shinyjs.debugMessage('shinyjs: calling function "toggle" with parameters:'); shinyjs.debugMessage(params); shinyjs.toggle(params);});
+Shiny.addCustomMessageHandler('shinyjs-enable', function(params) { shinyjs.debugMessage('shinyjs: calling function "enable" with parameters:'); shinyjs.debugMessage(params); shinyjs.enable(params);});
+Shiny.addCustomMessageHandler('shinyjs-disable', function(params) { shinyjs.debugMessage('shinyjs: calling function "disable" with parameters:'); shinyjs.debugMessage(params); shinyjs.disable(params);});
+Shiny.addCustomMessageHandler('shinyjs-toggleState', function(params) { shinyjs.debugMessage('shinyjs: calling function "toggleState" with parameters:'); shinyjs.debugMessage(params); shinyjs.toggleState(params);});
+Shiny.addCustomMessageHandler('shinyjs-addClass', function(params) { shinyjs.debugMessage('shinyjs: calling function "addClass" with parameters:'); shinyjs.debugMessage(params); shinyjs.addClass(params);});
+Shiny.addCustomMessageHandler('shinyjs-removeClass', function(params) { shinyjs.debugMessage('shinyjs: calling function "removeClass" with parameters:'); shinyjs.debugMessage(params); shinyjs.removeClass(params);});
+Shiny.addCustomMessageHandler('shinyjs-toggleClass', function(params) { shinyjs.debugMessage('shinyjs: calling function "toggleClass" with parameters:'); shinyjs.debugMessage(params); shinyjs.toggleClass(params);});
+Shiny.addCustomMessageHandler('shinyjs-html', function(params) { shinyjs.debugMessage('shinyjs: calling function "html" with parameters:'); shinyjs.debugMessage(params); shinyjs.html(params);});
+Shiny.addCustomMessageHandler('shinyjs-onevent', function(params) { shinyjs.debugMessage('shinyjs: calling function "onevent" with parameters:'); shinyjs.debugMessage(params); shinyjs.onevent(params);});
+Shiny.addCustomMessageHandler('shinyjs-removeEvent', function(params) { shinyjs.debugMessage('shinyjs: calling function "removeEvent" with parameters:'); shinyjs.debugMessage(params); shinyjs.removeEvent(params);});
+Shiny.addCustomMessageHandler('shinyjs-alert', function(params) { shinyjs.debugMessage('shinyjs: calling function "alert" with parameters:'); shinyjs.debugMessage(params); shinyjs.alert(params);});
+Shiny.addCustomMessageHandler('shinyjs-logjs', function(params) { shinyjs.debugMessage('shinyjs: calling function "logjs" with parameters:'); shinyjs.debugMessage(params); shinyjs.logjs(params);});
+Shiny.addCustomMessageHandler('shinyjs-runjs', function(params) { shinyjs.debugMessage('shinyjs: calling function "runjs" with parameters:'); shinyjs.debugMessage(params); shinyjs.runjs(params);});
+Shiny.addCustomMessageHandler('shinyjs-reset', function(params) { shinyjs.debugMessage('shinyjs: calling function "reset" with parameters:'); shinyjs.debugMessage(params); shinyjs.reset(params);});
+Shiny.addCustomMessageHandler('shinyjs-delay', function(params) { shinyjs.debugMessage('shinyjs: calling function "delay" with parameters:'); shinyjs.debugMessage(params); shinyjs.delay(params);});
+Shiny.addCustomMessageHandler('shinyjs-click', function(params) { shinyjs.debugMessage('shinyjs: calling function "click" with parameters:'); shinyjs.debugMessage(params); shinyjs.click(params);});
+Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debugMessage('shinyjs: calling function "refresh" with parameters:'); shinyjs.debugMessage(params); shinyjs.refresh(params);});</script>
+  <!-- <script src="./files/shinyjs-default-funcs.js"></script>
+  <script>shinyjs.debug = false;</script>
+<script src="./files/sockjs.min.js"></script>
+<script src="./files/shiny-server-client.min.js"></script>
+<script>preShinyInit({reconnect:true,reconnectTimeout:15000,disableProtocols:["htmlfile","xdr-streaming","xdr-polling"],token:true,workerId:true,subappTag:true,extendSession:true,fixupInternalLinks:true});</script> -->
+<link rel="stylesheet" type="text/css" href="./files/rstudio-connect.css">
+<script src="chrome-extension://bgafccceonganlcmcojjacanoadnhmac/allowClipboardClient.js"></script><script src="chrome-extension://bgafccceonganlcmcojjacanoadnhmac/common.js"></script></head>
+<body class="bslib-page-navbar">
+  
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <span class="navbar-brand">Movement of matter in a forest of trees</span>
+        </div>
+        <ul class="nav navbar-nav nav-underline" data-tabsetid="6868">
+          <li class="">
+            <a href="https://bio201.courses.stonybrook.edu/ForestExperiment/_w_6f62ce13/#tab-6868-1" data-toggle="tab" data-bs-toggle="tab" data-value="Introduction" tabindex="-1" aria-selected="false" aria-expanded="false">Introduction</a>
+          </li>
+          <li class="active">
+            <a href="https://bio201.courses.stonybrook.edu/ForestExperiment/_w_6f62ce13/#tab-6868-2" data-toggle="tab" data-bs-toggle="tab" data-value="Part 1" aria-expanded="true" tabindex="0" aria-selected="true">Part 1</a>
+          </li>
+          <li>
+            <a href="https://bio201.courses.stonybrook.edu/ForestExperiment/_w_6f62ce13/#tab-6868-3" data-toggle="tab" data-bs-toggle="tab" data-value="Part 2">Part 2</a>
+          </li>
+          <li>
+            <a href="https://bio201.courses.stonybrook.edu/ForestExperiment/_w_6f62ce13/#tab-6868-4" data-toggle="tab" data-bs-toggle="tab" data-value="Part 3">Part 3</a>
+          </li>
+          <li>
+            <a href="https://bio201.courses.stonybrook.edu/ForestExperiment/_w_6f62ce13/#tab-6868-5" data-toggle="tab" data-bs-toggle="tab" data-value="Part 4">Part 4</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="tab-content" data-tabsetid="6868">
+        <div class="tab-pane" data-value="Introduction" id="tab-6868-1" aria-hidden="true" tabindex="-1">
+          <div class="container-fluid">
+            <h3>Your assignment</h3>
+            <p>
+              In this activity, you will work through a case study involving a forest of trees (plants).
+              You will predict what will happen to the mass of the trees in the forest and other objects in the system.
+            </p>
+            <p class="text-warning">
+              <strong>Instructions (read carefully!):</strong>
+            </p>
+            <p>
+              Use the tabs at the top of the page to navigate through the experiments.
+              As you answer questions, new questions will appear below.
+              Take time to think before selecting each answer.
+              <em>You will only have one chance to answer each question.</em>
+            </p>
+            <div class="row">
+              <div class="col-sm-12">
+                <h4>Enter Email</h4>
+                <p>
+                  Before beginning the activity, make sure that your 
+                  <strong>stonybrook.edu</strong>
+                  email has been recorded in the box below.
+                </p>
+                <div class="form-group shiny-input-container" style="width:100%;">
+                  <label class="control-label" id="name-label" for="name"></label>
+                  <input id="name" type="text" class="shiny-input-text form-control shinyjs-resettable shiny-bound-input" value="Enter email here before beginning Part 1." data-shinyjs-resettable-id="name" data-shinyjs-resettable-type="Text" data-shinyjs-resettable-value="Enter email here before beginning Part 1." aria-live="polite">
+                </div>
+                <button id="NameButton" type="button" class="btn btn-default action-button shiny-bound-input">The email above is correct</button>
+                <div id="FeedbackNames" class="shinyjs-hide">
+                  <p class="text-warning">email recorded, please begin with Part 1 using the tabs at the top of the page.</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:10px; padding-right:10px; padding-top:35px; padding-bottom:5px">
+                <p style="font-size:12px;">
+                  <strong>Sources used to create this activity:</strong>
+                </p>
+                <p style="font-size:12px;">
+                  Chambers, Jeffrey Q, Joaquim dos Santos, Ralfh J Ribeiro, and Niro Higuchi. 2001. Tree Damage, Allometric Relationships, and above-Ground Net Primary Production in Central Amazon Forest.
+                  <em>Forest Ecology and Management</em>
+                   152 (1–3): 73–84.
+                </p>
+                <p style="font-size:12px;">
+                  Chambers, Jeffrey Q., Edgard S. Tribuzy, Ligia C. Toledo, Bianca F. Crispim, Niro Higuchi, Joaquim dos Santos, Alessandro C. Araújo, Bart Kruijt, Antonio D. Nobre, and Susan E. Trumbore. 2004. Respiration from a Tropical Forest Ecosystem: Partitioning of Sources and Low Carbon Use Efficiency.
+                  <em>Ecological Applications</em>
+                   14 (4): 72–88.
+                </p>
+                <p style="font-size:12px;">
+                  Mazzei, Lucas, Plinio Sist, Ademir Ruschel, Francis E. Putz, Phidias Marco, Wagner Pena, and Josué Evandro Ribeiro Ferreira. 2010. Above-Ground Biomass Dynamics after Reduced-Impact Logging in the Eastern Amazon.
+                  <em>Forest Ecology and Management</em>
+                   259 (3): 367–73.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane active" data-value="Part 1" id="tab-6868-2" aria-hidden="false" tabindex="0">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:5px">
+                <h3>Part 1</h3>
+                <p class="text-primary">There are 2 questions in this section (1 A-B).</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <h3>How do pathways of matter and energy transformation function at larger scales?: A forest of trees</h3>
+                <p>
+                  In this assignment, we will reason about matter and energy at larger scales.
+                  Up until now, we have been thinking about pathways of matter and energy in individual organisms like animals, plants, or fungi.
+                  However, we know that many individuals of different species can live together in one habitat, forming a community.
+                </p>
+                <p>
+                  Our system of interest is a forest.
+                  The forest in this example is real and exists in Brazil, in South America, a tropical climate.
+                  Tropical climates do not have the same seasons that we do in temperate climates (like Stony Brook).
+                  In tropical areas, temperature is fairly consistent over the year (rainfall may vary over the year, with a dry and a wet season).
+                  Tropical climates also have many more species than temperate climates.
+                </p>
+                <p></p>
+                <img src="./files/CompareForest.png" width="750px">
+                <figcaption>
+                  Photo credit: left 
+                  <a href="https://www.flickr.com/photos/bbcworldservice">Simon Chirgwin, BBC World News</a>
+                   right 
+                  <a href="https://www.flickr.com/photos/nicholas_t">Nicholas A. Tonelli</a>
+                </figcaption>
+                <p></p>
+                <p>
+                  At first, we will limit ourselves to thinking about just the tree species that live in the forest.
+                  There are other kinds of organisms in the forest as well: mammals, insects, vines, ferns, soil organisms, etc.
+                  However, trees make up the majority of the biomass in the forest.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div aria-labelledby="1A-label" class="form-group shiny-input-checkboxgroup shiny-input-container shinyjs-disabled shinyjs-resettable shiny-bound-input disabled" id="1A" role="group" style="width:100%;" data-shinyjs-resettable-id="1A" data-shinyjs-resettable-type="CheckboxGroup" data-shinyjs-resettable-value="[&quot;None selected&quot;]" disabled="disabled">
+                  <label class="control-label" id="1A-label" for="1A">(A) Select all correct statements about tree biomass in a forest.</label>
+                  <div class="shiny-options-group">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="1A" value="None selected" checked="checked" disabled="" class="disabled">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="1A" value="A" disabled="" class="disabled">
+                        <span>Most of a tree’s dry biomass is made up of carbon and oxygen atoms.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="1A" value="B" disabled="" class="disabled">
+                        <span>Most of a tree’s dry biomass is made up of nitrogen and phosphorus atoms.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="1A" value="C" disabled="" class="disabled">
+                        <span>A portion of a tree’s dry biomass is made up of sunlight energy.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="1A" value="D" disabled="" class="disabled">
+                        <span>Almost none of a tree’s total biomass is wet biomass; trees do not contain much water.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="1A" value="E" disabled="" class="disabled">
+                        <span>Most of a tree’s dry biomass is made up of carbon-based molecules, like cellulose.</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <p>If you are having trouble submitting your responses, make sure: 1) your email is filled in on the 'Introduction' tab, and 2) you have unchecked 'None selected.'</p>
+                <p class="text-warning">
+                  <em>When you press the submit button, your responses will be recorded and you will no longer be able to change your answer.</em>
+                </p>
+                <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input disabled" id="Submit1A" type="button" disabled="">Submit 1 A</button>
+                <div id="Feedback1A" class="shinyjs-hide">
+                  <strong>Answer explanation:</strong>
+                  <p>
+                    As we discussed in a previous assignment, plant dry biomass is made up of mostly carbon and oxygen atoms, whether the plant is a 6-foot tall sunflower or a 200-foot tall tropical tree.
+                    Plants are made up of other types of atoms too, like nitrogen and phosphorus, but those atoms aren’t as abundant in the plant’s body.
+                  </p>
+                  <p>
+                    Biomass is a word used to describe the matter that makes up organisms.
+                    Matter and energy are closely associated with one another in organisms, but they should always be thought of separately.
+                    Matter and energy cannot be converted into one another in biological systems.
+                  </p>
+                  <p>
+                    Trees contain a lot of water, and thus, just like sunflowers, trees’ wet biomass is similar to or greater than their dry biomass.
+                    Even though trees have wood and sunflowers do not, there is a lot of water inside the cells and tissues of trees.
+                  </p>
+                  <p>
+                    There are many different kinds of molecules in trees.
+                    Molecules like cellulose and lignin are extremely abundant and made up mostly of carbon and oxygen atoms.
+                    Lignin is a very large carbohydrate molecule with a lot of carbon that makes up wood.
+                    Remember that plants contain many other kinds of molecules as well, including starch, sucrose, proteins, DNA, lipids, etc., but they are less abundant.
+                  </p>
+                  <button id="Next1B" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next section</button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div id="Intro1B" class="shinyjs-hide">
+                  <img src="./files/BirdsEye.png" width="350px">
+                  <p></p>
+                  <p>
+                    Let’s focus on the trees in a small (one hectare) patch of forest.
+                    For reference, one hectare is about the size of a soccer (football) or baseball field.
+                    We will start with a no-penalty question.
+                    The goal of this question is to get you used to the scale of the one hectare forest in this example.
+                  </p>
+                  <div aria-labelledby="1B-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-disabled shinyjs-resettable shiny-bound-input disabled" id="1B" role="radiogroup" style="width:50%;" data-shinyjs-resettable-id="1B" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected" disabled="disabled">
+                    <label class="control-label" id="1B-label" for="1B">(B) Approximately how many grams of carbon do you think are contained in one hectare of tropical forest? (no penalty)</label>
+                    <div class="shiny-options-group">
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="1B" value="None selected" checked="checked" disabled="" class="disabled">
+                          <span>None selected</span>
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="1B" value="A" disabled="" class="disabled">
+                          <span>2,000,000 g (about the mass of two cars)</span>
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="1B" value="B" disabled="" class="disabled">
+                          <span>20,000,000 g (about the mass of 20 cars)</span>
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="1B" value="C" disabled="" class="disabled">
+                          <span>200,000,000 g (about the mass of 200 cars)</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input disabled" id="Submit1B" type="button" disabled="">Submit 1 B</button>
+                </div>
+                <div id="Feedback1B" class="shinyjs-hide">
+                  <strong>Answer explanation:</strong>
+                  <p>
+                    A typical hectare of tropical forest contains about 210,000,000 g of carbon in its trees, so this mass is greater than the mass of 200 cars.
+                    We will continue to use the mass of a car as a reference point for the duration of this assignment.
+                  </p>
+                  <p></p>
+                  <img src="./files/CompareMass_CarsTrees.png" width="750px">
+                  <p></p>
+                  <p>
+                    However, one hectare isn’t all that large--the area of the entire forest in northern Brazil that we are using as an example is 140,000 hectares.
+                    So this forest as a whole contains about 29,400,000,000,000 g of carbon in its trees, which is about the mass of 29,400,000 cars (it would take 100 days for this many cars to cross the George Washington Bridge in New York City).
+                    Were we to consider the mass of carbon in all forests globally, the amount of carbon contained is hard to comprehend!
+                    The world’s forests contain a considerable portion of the carbon present in Earth’s ecosystems.
+                  </p>
+                  <p class="text-warning">End of Part 1, please move on to Part 2 using the tabs at the top of the page.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" data-value="Part 2" id="tab-6868-3">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:0px; padding-right:1px; padding-top:5px; padding-bottom:5px">
+                <h3>Part 2</h3>
+                <p class="text-primary">There are 4 questions in this section (2 A-D).</p>
+                <p>Please complete Part 1 before beginning this section.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:0px; padding-right:1px; padding-top:5px; padding-bottom:5px">
+                <div id="IntroPart2" class="shinyjs-hide">
+                  <h3>How do humans use resources from forests?: logging</h3>
+                  <p>
+                    Humans benefit from trees in many ways.
+                    Trees provide resources for humans; for example, timber (wood) is used for buildings, furniture, paper, and other materials.
+                    Trees also provide food (e.g., chocolate, Brazil nuts) or other products (e.g., natural rubber).
+                    When trees are harvested by humans, this is called logging.
+                  </p>
+                  <p>
+                    Logging can be carried out in a number of ways, and different logging practices impact forests differently.
+                    Clear-cutting involves cutting down all trees in an area, and it can be carried out in small patches or large areas of forest.
+                    Selective logging involves cutting down only some trees in an area.
+                    This may involve selecting trees based on size (only harvesting relatively large trees, for example) or selecting certain species of trees to harvest.
+                  </p>
+                  <p>
+                    The hectare of forest that we will be focusing on was selectively logged in 2005.
+                    Only individuals larger than a certain size were harvested.
+                  </p>
+                  <p></p>
+                  <img src="./files/LoggingCombined.png" width="500px">
+                  <p></p>
+                  <p>Click the button below to see the amount of carbon: (1) in the forest before logging, (2) in the forest after logging, (3) in the timber products that were harvested, and (4) in dead trees that were killed because of logging.</p>
+                  <button id="LoggingButton" type="button" class="btn btn-default action-button shiny-bound-input">View logging data</button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div class="shiny-plot-output html-fill-item shiny-bound-output" id="LoggingPlot" style="width:80%;height:400px;" aria-live="polite">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div aria-labelledby="2A-label" class="form-group shiny-input-checkboxgroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="2A" role="group" style="width:100%;" data-shinyjs-resettable-id="2A" data-shinyjs-resettable-type="CheckboxGroup" data-shinyjs-resettable-value="[&quot;None selected&quot;]">
+                  <label class="control-label" id="2A-label" for="2A">(A) According to the figure above (select all that apply)...</label>
+                  <div class="shiny-options-group">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="2A" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="2A" value="A">
+                        <span>...approximately 65-75% of the carbon in trees was harvested during logging.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="2A" value="B">
+                        <span>...approximately 15-25% of the carbon in trees was harvested during logging.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="2A" value="C">
+                        <span>...approximately 65-75% of the carbon in live trees remains in the forest hectare after logging.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="2A" value="D">
+                        <span>...approximately 15-25% of the carbon in live trees remains in the forest hectare after logging.</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit2A" type="button" disabled="">Submit 2 A</button>
+                <div id="Feedback2A" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>
+                      Because the forest hectare was selectively logged, only a percentage of the trees were harvested.
+                      This means that about 75% of the carbon that was in live trees remains in the live trees in the forest hectare after logging.
+                      The rest of the carbon that was in live trees, about 25%, was either harvested or killed (collateral damage) over the course of logging.
+                    </p>
+                    <button id="Next2B" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next question</button>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div aria-labelledby="2B-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="2B" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="2B" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
+                  <label class="control-label" id="2B-label" for="2B">(B) After logging, there is approximately 157,000,000 g (~157 cars) of carbon in the trees that are still standing in the forest hectare. What do you predict will happen to the amount of carbon in the living trees in the forest hectare after 50 years?</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2B" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2B" value="A">
+                        <span>The amount of carbon will increase.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2B" value="B">
+                        <span>The amount of carbon will decrease.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2B" value="C">
+                        <span>The amount of carbon will stay approximately the same.</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit2B" type="button" disabled="">Submit 2 B</button>
+                <p></p>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="LoggingBiomassButton" type="button" disabled="">View forest carbon biomass over time</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div class="shiny-plot-output html-fill-item shiny-bound-output" id="LoggingBiomassPlot" style="width:80%;height:400px;" aria-live="polite"></div>
+                <div id="Feedback2B" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>The amount of carbon will increase over the 50-year period</p>
+                    <button id="Next2C" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next section</button>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div id="Intro2C" class="shinyjs-hide">
+                  <p>
+                    Logging removed about 47,000,000 g (~47 cars) of carbon from the living trees in the forest, most of which was used as timber.
+                    Over time, the amount of carbon increased until it was at about the same level as before logging.
+                    It will take about 50 years for the forest to return to its initial biomass.
+                    This information is important for foresters (i.e., people who manage forests for logging, recreation, hunting, and conservation) to plan how often forest resources can be harvested sustainably.
+                  </p>
+                </div>
+                <div aria-labelledby="2C-label" class="form-group shiny-input-checkboxgroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="2C" role="group" style="width:100%;" data-shinyjs-resettable-id="2C" data-shinyjs-resettable-type="CheckboxGroup" data-shinyjs-resettable-value="[&quot;None selected&quot;]">
+                  <label class="control-label" id="2C-label" for="2C">(C) Select ALL correct explanations for the pattern of the increase of carbon in the forest hectare over time.</label>
+                  <div class="shiny-options-group">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="2C" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="2C" value="A">
+                        <span>The remaining living trees continued to photosynthesize, using some portion of the carbon molecules produced to add to their bodies.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="2C" value="B">
+                        <span>New trees developed from seeds that germinated, developed, and grew larger in the spaces where trees were cut down.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="2C" value="C">
+                        <span>The remaining living trees absorbed large carbon molecules (e.g., starch, cellulose, etc.) from the soil, and added these molecules to their bodies.</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit2C" type="button" disabled="">Submit 2 C</button>
+                <div id="Feedback2C" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>
+                      The trees that were not harvested continued to photosynthesize.
+                      All green plants photosynthesize, and during photosynthesis, plants produce food (glucose), which they use in cellular respiration or for growth and maintenance of body structures.
+                    </p>
+                    <p>
+                      Also, the spaces left behind by the trees that were harvested were open, sunny areas.
+                      These spaces were suitable for some seeds to germinate, develop, and grow into adult trees.
+                      In fact, the soil in any forest contains lots of seeds that will germinate when conditions are favorable (i.e., an open space increases light levels).
+                    </p>
+                    <p>
+                      The increase in the biomass of living trees did not come from absorption of large carbon molecules in the soil.
+                      Plants do not eat food in the same way that animals or fungi do (by incorporating large organic molecules into their bodies); they make their own food via photosynthesis.
+                    </p>
+                    <button id="Next2D" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next question</button>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:0px; padding-right:1px; padding-top:5px; padding-bottom:5px">
+                <div id="Intro2D" class="shinyjs-hide">
+                  <p>
+                    So, we know that forests contain a lot of biomass, much of which is made up of carbon atoms.
+                    After forests are logged, the remaining trees grow larger as they photosynthesize and add mass to their body structures, and new trees germinate from seeds.
+                  </p>
+                  <p>
+                    In this assignment, we will only focus on matter and energy in the living trees that were not harvested or killed during logging.
+                    However, one thing to be aware of is that the trees that were killed during logging (knocked over by harvested trees or damaged by equipment) will still exist in the forest as dead logs.
+                    These trees will decompose, meaning that their body tissues will be consumed by fungi, bacteria, and various animals (especially insects).
+                    A large portion of the molecules from the dead trees’ body tissues will therefore be food for these organisms.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div aria-labelledby="2D-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="2D" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="2D" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
+                  <label class="control-label" id="2D-label" for="2D">(D) The mass of the carbon in the living trees in the forest hectare increased by 47,000,000 g (~ 47 cars) over the 50-year period. Where did the carbon come from? Choose the best answer.</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2D" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2D" value="A">
+                        <span>Sunlight</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2D" value="B">
+                        <span>Organic matter in the soil</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2D" value="C">
+                        <span>Nutrients in the soil</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="2D" value="D">
+                        <span>Gases in the atmosphere</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit2D" type="button" disabled="">Submit 2 D</button>
+                <div id="Feedback2D" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>
+                      Sunlight is energy, not matter.
+                      Matter and energy cannot be converted into one another in biological systems.
+                    </p>
+                    <p>Plants do not eat food like animals or fungi, and therefore do not take in large organic molecules.</p>
+                    <p>Plants use nutrients in the soil, but these nutrients make up a small percentage of a plant’s mass.</p>
+                    <p>
+                      Plants are made up mostly of carbon and oxygen, and they get these atoms from carbon dioxide in the atmosphere (the air surrounding Earth).
+                      During photosynthesis, plants combine carbon dioxide and water to form glucose (and oxygen as a byproduct) in a chemical reaction.
+                      The glucose is used by the plant as food, and some of this glucose is used by the plant to add to their body structures.
+                    </p>
+                  </ul>
+                  <p class="text-warning">End of Part 2, please move on to Part 3 using the tabs at the top of the page.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" data-value="Part 3" id="tab-6868-4">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:0px; padding-right:1px; padding-top:5px; padding-bottom:5px">
+                <h3>Part 3</h3>
+                <p class="text-primary">There are 3 questions in this section (3A-C).</p>
+                <p>Please complete Parts 1 and 2 before beginning this section.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div id="IntroPart3" class="shinyjs-hide">
+                  <h3>How much carbon do trees take in for photosynthesis?</h3>
+                  <p>
+                    Scientists estimated the rate of photosynthesis for the trees in the forest hectare.
+                    This was possible using a tool called a “portable photosynthesis system”, which can detect the gases going into and coming from leaves.
+                    They measured photosynthesis in terms of the carbon atoms (in carbon dioxide gas molecules) taken up by the trees from the atmosphere.
+                    Using these measurements, they estimated the total amount of carbon that will be taken up by trees for a 50-year period.
+                  </p>
+                  <p>
+                    As a review, in photosynthesis, many small, lower-energy molecules (carbon dioxide gas and water) are used to make one large, higher-energy molecule (glucose) along with some leftover molecules (oxygen gas).
+                    Sunlight provides the energy to do the work (breaking small molecules and forming large molecules).
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div aria-labelledby="3A-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="3A" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="3A" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
+                  <label class="control-label" id="3A-label" for="3A">(A) Over the 50-year period, do you think that the amount of carbon that the trees will take in for photosynthesis will be less than, about equal to, or greater than the amount of carbon that they gained in their tissues as dry biomass?</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3A" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3A" value="A">
+                        <span>The trees will take in less carbon for photosynthesis than the amount of carbon that they will gain in their tissues as dry biomass.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3A" value="B">
+                        <span>The trees will take in about the same amount of carbon for photosynthesis as the amount of carbon that they will gain in their tissues as dry biomass.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3A" value="C">
+                        <span>The trees will take in more carbon for photosynthesis than the amount of carbon that they will gain in their tissues as dry biomass.</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit3A" type="button" disabled="">Submit 3A</button>
+                <p></p>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="PhotosynthesisButton" type="button" disabled="">View data for photosynthesis</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div class="shiny-plot-output html-fill-item shiny-bound-output" id="PhotosynthesisPlot" style="width:80%;height:400px;" aria-live="polite"></div>
+                <p></p>
+                <div id="Feedback3A" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>
+                      This graph shows the total (cumulative) amount of carbon that will be taken up by the living trees in the forest hectare over the 50-year period.
+                      Remember from Part 2 that the trees will gain about 47,000,000 g of carbon (~47 cars) in dry biomass over the same period.
+                    </p>
+                    <button id="Next3B" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next section</button>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div aria-labelledby="3B-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="3B" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="3B" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
+                  <label class="control-label" id="3B-label" for="3B">(B) Use the figure above to answer this question. About how many grams of carbon will be taken in for photosynthesis by the living trees in this forest hectare over the 50-year period? (Note: this is not a trick question, we just want you to practice reading a graph).</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3B" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3B" value="A">
+                        <span>About 10,000,000 g of carbon (~10 cars)</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3B" value="B">
+                        <span>About 50,000,000 g of carbon (~50 cars)</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3B" value="C">
+                        <span>About 100,000,000 g of carbon (~100 cars)</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3B" value="D">
+                        <span>About 150,000,000 g of carbon (~150 cars)</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3B" value="E">
+                        <span>About 200,000,000 g of carbon (~200 cars)</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit3B" type="button" disabled="">Submit 3B</button>
+                <div id="Feedback3B" class="shinyjs-hide">
+                  <ul>
+                    <strong>Remember the following:</strong>
+                    <p>
+                      About 200,000,000 g (~200 cars) of carbon will be taken in by the living trees in the forest hectare over the 50-year period.
+                      This is much greater than the 47,000,000 g (~47 cars) of carbon that the trees gained in dry biomass (see Part 2).
+                    </p>
+                    <button id="Next3C" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next question</button>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div aria-labelledby="3C-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="3C" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="3C" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
+                  <label class="control-label" id="3C-label" for="3C">(C) The trees will take in MORE carbon for photosynthesis than the amount of carbon that they will gain in their tissues. What happened to the remaining carbon? Select the best explanation.</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3C" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3C" value="A">
+                        <span>The remaining carbon will be used as an input for cellular respiration.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3C" value="B">
+                        <span>The remaining carbon will be burned up and converted to energy.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="3C" value="C">
+                        <span>The remaining carbon will be secreted by the roots as waste.</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit3C" type="button" disabled="">Submit 3C</button>
+                <p></p>
+                <div id="Feedback3C" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>
+                      The glucose molecule that the tree produces during photosynthesis can be added to its tissues OR it can be used in metabolism (i.e., cellular respiration).
+                      A lot of the carbon taken in for photosynthesis was used as inputs for cellular respiration.
+                      Trees are living organisms, and like all living things, they undergo chemical processes (i.e, metabolic processes) to stay alive.
+                      Cellular respiration is a metabolic process that allows energy to become available to the trees for work (growth, maintenance, etc.).
+                    </p>
+                    <p>Remember that matter cannot be destroyed and matter cannot be converted into energy in biological systems.</p>
+                    <p>Trees do not produce waste in the same way that organisms that consume food (animals and fungi) do, and they do not secrete a considerable amount of carbon from their roots as waste.</p>
+                  </ul>
+                  <p class="text-warning">End of Part 3, please move on to Part 4 using the tabs at the top of the page.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" data-value="Part 4" id="tab-6868-5">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:5px">
+                <h3>Part 4</h3>
+                <p class="text-primary">There are 4 questions in this section (4A-D).</p>
+                <p>Please complete Parts 1-3 before beginning this section.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div id="IntroPart4" class="shinyjs-hide">
+                  <h3>How much carbon do trees release for cellular respiration?</h3>
+                  <p>
+                    The scientists used similar methods to estimate cellular respiration for the living trees.
+                    They measured cellular respiration in terms of the carbon that was released by the trees to the atmosphere.
+                    Using these measurements, they estimated the total (cumulative) amount of carbon that will be released by the living trees in the forest hectare for a 50-year period.
+                  </p>
+                  <button id="CellularRespirationButton" type="button" class="btn btn-default action-button shiny-bound-input">View cellular respiration data</button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div id="CellularRespirationPlotShow" class="shinyjs-hide">
+                  <div class="shiny-plot-output html-fill-item shiny-bound-output" id="CellularRespirationPlot" style="width:80%;height:400px;" aria-live="polite"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div aria-labelledby="4A-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="4A" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="4A" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
+                  <label class="control-label" id="4A-label" for="4A">(A) Use the figure above to answer this question. About how many grams of carbon will be released for cellular respiration by the living trees in this forest hectare over the 50-year period? (Again: this is not a trick question).</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="4A" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="4A" value="A">
+                        <span>About 10,000,000 g of carbon (~10 cars)</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="4A" value="B">
+                        <span>About 50,000,000 g of carbon (~50 cars)</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="4A" value="C">
+                        <span>About 100,000,000 g of carbon (~100 cars)</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="4A" value="D">
+                        <span>About 150,000,000 g of carbon (~150 cars)</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="4A" value="E">
+                        <span>About 200,000,000 g of carbon (~200 cars)</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit4A" type="button" disabled="">Submit 4A</button>
+                <div id="Feedback4A" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>About 150,000,000 g (~150 cars) of carbon will be released by the living trees in the forest hectare over the 50-year period.</p>
+                    <button id="Next4B" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next question</button>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div aria-labelledby="4B-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="4B" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="4B" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
+                  <label class="control-label" id="4B-label" for="4B">(B) What happened to the carbon atoms that were used by the trees as inputs for cellular respiration?</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="4B" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="4B" value="A">
+                        <span>They left the trees’ bodies as gases.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="4B" value="B">
+                        <span>They left the trees’ bodies as organic molecules.</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="4B" value="C">
+                        <span>They were burned up in the trees’ bodies and no longer exist.</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit4B" type="button" disabled="">Submit 4B</button>
+                <div id="Feedback4B" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>
+                      During cellular respiration, a glucose molecule (a sugar) and oxygen gas molecules are rearranged into many small, lower-energy molecules (carbon dioxide and water).
+                      The carbon dioxide and water vapor molecules do not remain within the plant, but rather leave the plant's body as gas molecules, into the surrounding air.
+                    </p>
+                    <button id="Next4C" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next question</button>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div aria-labelledby="4C-label" class="form-group shiny-input-checkboxgroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="4C" role="group" style="width:100%;" data-shinyjs-resettable-id="4C" data-shinyjs-resettable-type="CheckboxGroup" data-shinyjs-resettable-value="[&quot;None selected&quot;]">
+                  <label class="control-label" id="4C-label" for="4C">(C) Select ALL true statements about cellular respiration in the living trees in the tropical forest hectare.</label>
+                  <div class="shiny-options-group">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="4C" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="4C" value="A">
+                        <span>Cellular respiration occurred in all living cells in the trees’ roots, but not in the living cells in the trees’ leaves or stem.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="4C" value="B">
+                        <span>Cellular respiration occurred in all living cells in the trees’ roots, leaves, and stem.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="4C" value="C">
+                        <span>Cellular respiration occurred in the trees during the night, but not during the day.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="4C" value="D">
+                        <span>Cellular respiration occurred in the trees during the day and night.</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit4C" type="button" disabled="">Submit 4C</button>
+                <div id="Feedback4C" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>
+                      Cellular respiration occurs in all living plant cells, whether the cells are in the leaves, stem (trunk), or roots of a plant.
+                      The same goes for living cells in trees.
+                      Cellular respiration occurs in plants all the time, not just at night.
+                    </p>
+                    <p>
+                      However, the rate of cellular respiration will change depending on the body part/tissue or the external environment.
+                      For example, cellular respiration may occur at a faster rate if it is sunny (and a lot of photosynthesis is occurring).
+                    </p>
+                    <button id="NextIntro4D" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next section</button>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div id="Intro4D" class="shinyjs-hide">
+                  <p>
+                    Now, the amount of carbon that was taken up by trees (during photosynthesis) and the amount of carbon that was used by trees (during respiration), makes more sense given that we know the biomass of the forest trees increased over the 50-year period.
+                    Again, when trees are growing, the amount of carbon they reorganize into large carbon-containing molecules from carbon dioxide via photosynthesis is greater than the amount of carbon they release to the air via respiration.
+                  </p>
+                  <button id="PhotoRespButton" type="button" class="btn btn-default action-button shiny-bound-input">View comparison of photosynthesis and respiration</button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div id="ComparePhotoRespPlotShow" class="shinyjs-hide">
+                  <div class="shiny-plot-output html-fill-item shiny-bound-output" id="ComparePhotoRespPlot" style="width:80%;height:400px;" aria-live="polite"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
+                <div aria-labelledby="4D-label" class="form-group shiny-input-checkboxgroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="4D" role="group" style="width:100%;" data-shinyjs-resettable-id="4D" data-shinyjs-resettable-type="CheckboxGroup" data-shinyjs-resettable-value="[&quot;None selected&quot;]">
+                  <label class="control-label" id="4D-label" for="4D">(D) Select ALL true statements about the living trees in the tropical forest hectare.</label>
+                  <div class="shiny-options-group">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="4D" value="None selected" checked="checked">
+                        <span>None selected</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="4D" value="A">
+                        <span>The trees in the forest hectare released more carbon (as carbon dioxide) than they added to their bodies as dry biomass.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="4D" value="B">
+                        <span>The trees in the forest hectare took in more carbon (in carbon dioxide) than they added to their bodies as dry biomass.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="4D" value="C">
+                        <span>The same processes of photosynthesis, growth, and cellular respiration occur in an entire hectare of trees as occurred in a single sunflower plant.</span>
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="4D" value="D">
+                        <span>After a 50-year period, the logged tropical forest returned to exactly the same state it was in before it was logged: with the same total biomass and the same number of tree species.</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit4D" type="button" disabled="">Submit 4D</button>
+                <div id="Feedback4D" class="shinyjs-hide">
+                  <ul>
+                    <strong>Answer explanation:</strong>
+                    <p>
+                      The trees in the forest hectare took in a huge amount of carbon (200,000,000 g) as carbon dioxide gas, which the trees used as an input for photosynthesis.
+                      During photosynthesis, the carbon in carbon dioxide was converted to carbon in sugar molecules (glucose).
+                      A lot of the carbon in glucose was used as inputs for cellular respiration.
+                      The trees carried out cellular respiration in order to make energy available for metabolic activities in their bodies.
+                      In fact, more carbon in glucose was used as inputs to cellular respiration than was used for growth.
+                      Thus, the trees in the forest hectare did release more carbon (as carbon dioxide) than they added to their bodies as dry biomass.
+                    </p>
+                    <p>
+                      The same processes of photosynthesis, growth, and cellular respiration occur in an entire hectare of trees as occurred in a single sunflower plant.
+                      So, once you understand biological processes at the organismal level, you are better prepared to think about larger scales: populations of organisms, communities, and ecosystems.
+                    </p>
+                    <p>
+                      The living trees in the forest hectare will grow to the same dry biomass after a 50-year period following logging.
+                      However, we do not have information about the tree species that were present in the forest before and after logging.
+                      So, we do not know whether the forest included the same number of species after the 50-year period.
+                      Understanding which tree species are present is important for many reasons: different species have different economic value to humans; different tree species have relationships with different species of fungi, bacteria, insects, etc.; and different species have different ecosystem functions.
+                    </p>
+                  </ul>
+                  <p class="text-success">End of the activity, all of your responses have been recorded.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+
+<div id="ss-connect-dialog" style="display: none;"></div><div id="ss-overlay" class="ss-gray-out" style="display: none;"></div><div class="shiny-server-account">  Logged in as <span class="shiny-server-username">Paul.St.Denis@stonybrook.edu</span>  <a href="https://bio201.courses.stonybrook.edu/ForestExperiment/_w_6f62ce13/__logout__">Logout</a></div></body></html>
