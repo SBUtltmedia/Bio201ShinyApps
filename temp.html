@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<!-- saved from url=(0055)https://bio201.courses.stonybrook.edu/ForestExperiment/ --><html class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE html><!-- saved from url=(0055)https://bio201.courses.stonybrook.edu/ForestExperiment/ --><html class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!--<base href="_w_6f62ce13/">--><base href=".">
     <script type="text/javascript">
 (function() {
@@ -31,8 +30,44 @@
   <link rel="stylesheet" type="text/css" href="./files/cosmo.min.css">
 
 <script>
-let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A"], ["B", "D"], ["A", "B", "C"]]
+let rightAnswers = {
+    "1A": ["A", "E"],
+    "1B": [],
+    "2A": ["B", "C"],
+    "2B": ["A"],
+    "2C": ["A", "B"],
+    "2D": ["D"],
+    "3A": ["C"],
+    "3B": ["E"],
+    "3C": ["A"],
+    "4A": ["D"],
+    "4B": ["A"],
+    "4C": ["B", "D"],
+    "4D": ["A", "B", "C"]
+}
+addEventListener("DOMContentLoaded", (event) => {
 
+let buttons = document.getElementsByTagName("button")
+let buttonArray=Array.from(buttons);
+let answerCount=0
+for (id in buttonArray ){
+
+if(buttonArray[id].id.includes("Submit")){
+ 
+  rightAnswers[buttonArray[id].id]=rightAnswerArray[answerCount++]
+}
+
+
+
+  // button.addEventListener("click",(e)=>{
+  //     console.log(e.currentTarget)
+
+  // })
+}
+console.log(rightAnswers)
+
+
+});
 
 </script>
   <!-- <script src="./files/shinyjs-default-funcs.js"></script>
@@ -168,42 +203,37 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
             </div>
             <div class="row">
               <div class="col-sm-12" style="padding-left:5px; padding-right:1px; padding-top:5px; padding-bottom:15px">
-                <div aria-labelledby="1A-label" class="form-group shiny-input-checkboxgroup shiny-input-container shinyjs-disabled shinyjs-resettable shiny-bound-input disabled" id="1A" role="group" style="width:100%;" data-shinyjs-resettable-id="1A" data-shinyjs-resettable-type="CheckboxGroup" data-shinyjs-resettable-value="[&quot;None selected&quot;]" disabled="disabled">
+                <div aria-labelledby="1A-label" class="form-group shiny-input-checkboxgroup shiny-input-container shinyjs-disabled shinyjs-resettable shiny-bound-input" id="1A" role="group" style="width:100%;" data-shinyjs-resettable-id="1A" data-shinyjs-resettable-type="CheckboxGroup" data-shinyjs-resettable-value="[&quot;None selected&quot;]" ="disabled"="">
                   <label class="control-label" id="1A-label" for="1A">(A) Select all correct statements about tree biomass in a forest.</label>
                   <div class="shiny-options-group">
+                    
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" name="1A" value="None selected" checked="checked" disabled="" class="disabled">
-                        <span>None selected</span>
-                      </label>
-                    </div>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" name="1A" value="A" disabled="" class="disabled">
+                        <input type="checkbox" name="1A" value="A"   class="disabled">
                         <span>Most of a tree’s dry biomass is made up of carbon and oxygen atoms.</span>
                       </label>
                     </div>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" name="1A" value="B" disabled="" class="disabled">
+                        <input type="checkbox" name="1A" value="B"   class="disabled">
                         <span>Most of a tree’s dry biomass is made up of nitrogen and phosphorus atoms.</span>
                       </label>
                     </div>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" name="1A" value="C" disabled="" class="disabled">
+                        <input type="checkbox" name="1A" value="C"   class="disabled">
                         <span>A portion of a tree’s dry biomass is made up of sunlight energy.</span>
                       </label>
                     </div>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" name="1A" value="D" disabled="" class="disabled">
+                        <input type="checkbox" name="1A" value="D"   class="disabled">
                         <span>Almost none of a tree’s total biomass is wet biomass; trees do not contain much water.</span>
                       </label>
                     </div>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" name="1A" value="E" disabled="" class="disabled">
+                        <input type="checkbox" name="1A" value="E"   class="disabled">
                         <span>Most of a tree’s dry biomass is made up of carbon-based molecules, like cellulose.</span>
                       </label>
                     </div>
@@ -213,7 +243,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                 <p class="text-warning">
                   <em>When you press the submit button, your responses will be recorded and you will no longer be able to change your answer.</em>
                 </p>
-                <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input disabled" id="Submit1A" type="button" disabled="">Submit 1 A</button>
+                <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input" id="Submit1A" type="button"  >Submit 1 A</button>
                 <div id="Feedback1A" class="shinyjs-hide">
                   <strong>Answer explanation:</strong>
                   <p>
@@ -235,7 +265,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                     Lignin is a very large carbohydrate molecule with a lot of carbon that makes up wood.
                     Remember that plants contain many other kinds of molecules as well, including starch, sucrose, proteins, DNA, lipids, etc., but they are less abundant.
                   </p>
-                  <button id="Next1B" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next section</button>
+                  
                 </div>
               </div>
             </div>
@@ -250,36 +280,31 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                     We will start with a no-penalty question.
                     The goal of this question is to get you used to the scale of the one hectare forest in this example.
                   </p>
-                  <div aria-labelledby="1B-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-disabled shinyjs-resettable shiny-bound-input disabled" id="1B" role="radiogroup" style="width:50%;" data-shinyjs-resettable-id="1B" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected" disabled="disabled">
+                  <div aria-labelledby="1B-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-disabled shinyjs-resettable shiny-bound-input" id="1B" role="radiogroup" style="width:50%;" data-shinyjs-resettable-id="1B" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected" ="disabled"="">
                     <label class="control-label" id="1B-label" for="1B">(B) Approximately how many grams of carbon do you think are contained in one hectare of tropical forest? (no penalty)</label>
                     <div class="shiny-options-group">
+                      
                       <div class="radio">
                         <label>
-                          <input type="radio" name="1B" value="None selected" checked="checked" disabled="" class="disabled">
-                          <span>None selected</span>
-                        </label>
-                      </div>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="1B" value="A" disabled="" class="disabled">
+                          <input type="radio" name="1B" value="A"   class="disabled">
                           <span>2,000,000 g (about the mass of two cars)</span>
                         </label>
                       </div>
                       <div class="radio">
                         <label>
-                          <input type="radio" name="1B" value="B" disabled="" class="disabled">
+                          <input type="radio" name="1B" value="B"   class="disabled">
                           <span>20,000,000 g (about the mass of 20 cars)</span>
                         </label>
                       </div>
                       <div class="radio">
                         <label>
-                          <input type="radio" name="1B" value="C" disabled="" class="disabled">
+                          <input type="radio" name="1B" value="C"   class="disabled">
                           <span>200,000,000 g (about the mass of 200 cars)</span>
                         </label>
                       </div>
                     </div>
                   </div>
-                  <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input disabled" id="Submit1B" type="button" disabled="">Submit 1 B</button>
+                  <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input" id="Submit1B" type="button"  >Submit 1 B</button>
                 </div>
                 <div id="Feedback1B" class="shinyjs-hide">
                   <strong>Answer explanation:</strong>
@@ -332,7 +357,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                     Only individuals larger than a certain size were harvested.
                   </p>
                   <p></p>
-                  <img src="./files/LoggingCombined.npg" width="500px">
+                  <img src="./files/LoggingCombined.png" width="500px">
                   <p></p>
                   <p>Click the button below to see the amount of carbon: (1) in the forest before logging, (2) in the forest after logging, (3) in the timber products that were harvested, and (4) in dead trees that were killed because of logging.</p>
                   <button id="LoggingButton" type="button" class="btn btn-default action-button shiny-bound-input">View logging data</button>
@@ -351,12 +376,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                 <div aria-labelledby="2A-label" class="form-group shiny-input-checkboxgroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="2A" role="group" style="width:100%;" data-shinyjs-resettable-id="2A" data-shinyjs-resettable-type="CheckboxGroup" data-shinyjs-resettable-value="[&quot;None selected&quot;]">
                   <label class="control-label" id="2A-label" for="2A">(A) According to the figure above (select all that apply)...</label>
                   <div class="shiny-options-group">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" name="2A" value="None selected" checked="checked">
-                        <span>None selected</span>
-                      </label>
-                    </div>
+                    
                     <div class="checkbox">
                       <label>
                         <input type="checkbox" name="2A" value="A">
@@ -383,7 +403,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit2A" type="button" disabled="">Submit 2 A</button>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input" id="Submit2A" type="button"  >Submit 2 A</button>
                 <div id="Feedback2A" class="shinyjs-hide">
                   <ul>
                     <strong>Answer explanation:</strong>
@@ -392,7 +412,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                       This means that about 75% of the carbon that was in live trees remains in the live trees in the forest hectare after logging.
                       The rest of the carbon that was in live trees, about 25%, was either harvested or killed (collateral damage) over the course of logging.
                     </p>
-                    <button id="Next2B" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next question</button>
+                    
                   </ul>
                 </div>
               </div>
@@ -402,12 +422,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                 <div aria-labelledby="2B-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="2B" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="2B" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
                   <label class="control-label" id="2B-label" for="2B">(B) After logging, there is approximately 157,000,000 g (~157 cars) of carbon in the trees that are still standing in the forest hectare. What do you predict will happen to the amount of carbon in the living trees in the forest hectare after 50 years?</label>
                   <div class="shiny-options-group">
-                    <div class="radio">
-                      <label>
-                        <input type="radio" name="2B" value="None selected" checked="checked">
-                        <span>None selected</span>
-                      </label>
-                    </div>
+                    
                     <div class="radio">
                       <label>
                         <input type="radio" name="2B" value="A">
@@ -428,9 +443,9 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit2B" type="button" disabled="">Submit 2 B</button>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input" id="Submit2B" type="button"  >Submit 2 B</button>
                 <p></p>
-                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="LoggingBiomassButton" type="button" disabled="">View forest carbon biomass over time</button>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input" id="LoggingBiomassButton" type="button"  >View forest carbon biomass over time</button>
               </div>
             </div>
             <div class="row">
@@ -442,7 +457,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                   <ul>
                     <strong>Answer explanation:</strong>
                     <p>The amount of carbon will increase over the 50-year period</p>
-                    <button id="Next2C" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next section</button>
+                    
                   </ul>
                 </div>
               </div>
@@ -460,12 +475,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                 <div aria-labelledby="2C-label" class="form-group shiny-input-checkboxgroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="2C" role="group" style="width:100%;" data-shinyjs-resettable-id="2C" data-shinyjs-resettable-type="CheckboxGroup" data-shinyjs-resettable-value="[&quot;None selected&quot;]">
                   <label class="control-label" id="2C-label" for="2C">(C) Select ALL correct explanations for the pattern of the increase of carbon in the forest hectare over time.</label>
                   <div class="shiny-options-group">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" name="2C" value="None selected" checked="checked">
-                        <span>None selected</span>
-                      </label>
-                    </div>
+                    
                     <div class="checkbox">
                       <label>
                         <input type="checkbox" name="2C" value="A">
@@ -486,7 +496,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit2C" type="button" disabled="">Submit 2 C</button>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input" id="Submit2C" type="button"  >Submit 2 C</button>
                 <div id="Feedback2C" class="shinyjs-hide">
                   <ul>
                     <strong>Answer explanation:</strong>
@@ -503,7 +513,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                       The increase in the biomass of living trees did not come from absorption of large carbon molecules in the soil.
                       Plants do not eat food in the same way that animals or fungi do (by incorporating large organic molecules into their bodies); they make their own food via photosynthesis.
                     </p>
-                    <button id="Next2D" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next question</button>
+                    
                   </ul>
                 </div>
               </div>
@@ -529,12 +539,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                 <div aria-labelledby="2D-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="2D" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="2D" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
                   <label class="control-label" id="2D-label" for="2D">(D) The mass of the carbon in the living trees in the forest hectare increased by 47,000,000 g (~ 47 cars) over the 50-year period. Where did the carbon come from? Choose the best answer.</label>
                   <div class="shiny-options-group">
-                    <div class="radio">
-                      <label>
-                        <input type="radio" name="2D" value="None selected" checked="checked">
-                        <span>None selected</span>
-                      </label>
-                    </div>
+                    
                     <div class="radio">
                       <label>
                         <input type="radio" name="2D" value="A">
@@ -561,7 +566,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit2D" type="button" disabled="">Submit 2 D</button>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input" id="Submit2D" type="button"  >Submit 2 D</button>
                 <div id="Feedback2D" class="shinyjs-hide">
                   <ul>
                     <strong>Answer explanation:</strong>
@@ -614,12 +619,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                 <div aria-labelledby="3A-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="3A" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="3A" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
                   <label class="control-label" id="3A-label" for="3A">(A) Over the 50-year period, do you think that the amount of carbon that the trees will take in for photosynthesis will be less than, about equal to, or greater than the amount of carbon that they gained in their tissues as dry biomass?</label>
                   <div class="shiny-options-group">
-                    <div class="radio">
-                      <label>
-                        <input type="radio" name="3A" value="None selected" checked="checked">
-                        <span>None selected</span>
-                      </label>
-                    </div>
+                    
                     <div class="radio">
                       <label>
                         <input type="radio" name="3A" value="A">
@@ -640,9 +640,9 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit3A" type="button" disabled="">Submit 3A</button>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input" id="Submit3A" type="button"  >Submit 3A</button>
                 <p></p>
-                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="PhotosynthesisButton" type="button" disabled="">View data for photosynthesis</button>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input" id="PhotosynthesisButton" type="button"  >View data for photosynthesis</button>
               </div>
             </div>
             <div class="row">
@@ -658,7 +658,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                       This graph shows the total (cumulative) amount of carbon that will be taken up by the living trees in the forest hectare over the 50-year period.
                       Remember from Part 2 that the trees will gain about 47,000,000 g of carbon (~47 cars) in dry biomass over the same period.
                     </p>
-                    <button id="Next3B" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next section</button>
+                    
                   </ul>
                 </div>
               </div>
@@ -668,12 +668,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                 <div aria-labelledby="3B-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="3B" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="3B" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
                   <label class="control-label" id="3B-label" for="3B">(B) Use the figure above to answer this question. About how many grams of carbon will be taken in for photosynthesis by the living trees in this forest hectare over the 50-year period? (Note: this is not a trick question, we just want you to practice reading a graph).</label>
                   <div class="shiny-options-group">
-                    <div class="radio">
-                      <label>
-                        <input type="radio" name="3B" value="None selected" checked="checked">
-                        <span>None selected</span>
-                      </label>
-                    </div>
+                    
                     <div class="radio">
                       <label>
                         <input type="radio" name="3B" value="A">
@@ -706,7 +701,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit3B" type="button" disabled="">Submit 3B</button>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input" id="Submit3B" type="button"  >Submit 3B</button>
                 <div id="Feedback3B" class="shinyjs-hide">
                   <ul>
                     <strong>Remember the following:</strong>
@@ -714,7 +709,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                       About 200,000,000 g (~200 cars) of carbon will be taken in by the living trees in the forest hectare over the 50-year period.
                       This is much greater than the 47,000,000 g (~47 cars) of carbon that the trees gained in dry biomass (see Part 2).
                     </p>
-                    <button id="Next3C" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next question</button>
+                    
                   </ul>
                 </div>
               </div>
@@ -724,12 +719,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                 <div aria-labelledby="3C-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="3C" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="3C" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
                   <label class="control-label" id="3C-label" for="3C">(C) The trees will take in MORE carbon for photosynthesis than the amount of carbon that they will gain in their tissues. What happened to the remaining carbon? Select the best explanation.</label>
                   <div class="shiny-options-group">
-                    <div class="radio">
-                      <label>
-                        <input type="radio" name="3C" value="None selected" checked="checked">
-                        <span>None selected</span>
-                      </label>
-                    </div>
+                    
                     <div class="radio">
                       <label>
                         <input type="radio" name="3C" value="A">
@@ -750,7 +740,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit3C" type="button" disabled="">Submit 3C</button>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input" id="Submit3C" type="button"  >Submit 3C</button>
                 <p></p>
                 <div id="Feedback3C" class="shinyjs-hide">
                   <ul>
@@ -806,12 +796,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                 <div aria-labelledby="4A-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="4A" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="4A" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
                   <label class="control-label" id="4A-label" for="4A">(A) Use the figure above to answer this question. About how many grams of carbon will be released for cellular respiration by the living trees in this forest hectare over the 50-year period? (Again: this is not a trick question).</label>
                   <div class="shiny-options-group">
-                    <div class="radio">
-                      <label>
-                        <input type="radio" name="4A" value="None selected" checked="checked">
-                        <span>None selected</span>
-                      </label>
-                    </div>
+                    
                     <div class="radio">
                       <label>
                         <input type="radio" name="4A" value="A">
@@ -844,12 +829,12 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit4A" type="button" disabled="">Submit 4A</button>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input" id="Submit4A" type="button"  >Submit 4A</button>
                 <div id="Feedback4A" class="shinyjs-hide">
                   <ul>
                     <strong>Answer explanation:</strong>
                     <p>About 150,000,000 g (~150 cars) of carbon will be released by the living trees in the forest hectare over the 50-year period.</p>
-                    <button id="Next4B" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next question</button>
+                    
                   </ul>
                 </div>
               </div>
@@ -859,12 +844,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                 <div aria-labelledby="4B-label" class="form-group shiny-input-radiogroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="4B" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="4B" data-shinyjs-resettable-type="RadioButtons" data-shinyjs-resettable-value="None selected">
                   <label class="control-label" id="4B-label" for="4B">(B) What happened to the carbon atoms that were used by the trees as inputs for cellular respiration?</label>
                   <div class="shiny-options-group">
-                    <div class="radio">
-                      <label>
-                        <input type="radio" name="4B" value="None selected" checked="checked">
-                        <span>None selected</span>
-                      </label>
-                    </div>
+                    
                     <div class="radio">
                       <label>
                         <input type="radio" name="4B" value="A">
@@ -885,7 +865,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit4B" type="button" disabled="">Submit 4B</button>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input" id="Submit4B" type="button"  >Submit 4B</button>
                 <div id="Feedback4B" class="shinyjs-hide">
                   <ul>
                     <strong>Answer explanation:</strong>
@@ -893,7 +873,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                       During cellular respiration, a glucose molecule (a sugar) and oxygen gas molecules are rearranged into many small, lower-energy molecules (carbon dioxide and water).
                       The carbon dioxide and water vapor molecules do not remain within the plant, but rather leave the plant's body as gas molecules, into the surrounding air.
                     </p>
-                    <button id="Next4C" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next question</button>
+                    
                   </ul>
                 </div>
               </div>
@@ -903,12 +883,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                 <div aria-labelledby="4C-label" class="form-group shiny-input-checkboxgroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="4C" role="group" style="width:100%;" data-shinyjs-resettable-id="4C" data-shinyjs-resettable-type="CheckboxGroup" data-shinyjs-resettable-value="[&quot;None selected&quot;]">
                   <label class="control-label" id="4C-label" for="4C">(C) Select ALL true statements about cellular respiration in the living trees in the tropical forest hectare.</label>
                   <div class="shiny-options-group">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" name="4C" value="None selected" checked="checked">
-                        <span>None selected</span>
-                      </label>
-                    </div>
+                    
                     <div class="checkbox">
                       <label>
                         <input type="checkbox" name="4C" value="A">
@@ -935,7 +910,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit4C" type="button" disabled="">Submit 4C</button>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input" id="Submit4C" type="button"  >Submit 4C</button>
                 <div id="Feedback4C" class="shinyjs-hide">
                   <ul>
                     <strong>Answer explanation:</strong>
@@ -948,7 +923,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                       However, the rate of cellular respiration will change depending on the body part/tissue or the external environment.
                       For example, cellular respiration may occur at a faster rate if it is sunny (and a lot of photosynthesis is occurring).
                     </p>
-                    <button id="NextIntro4D" type="button" class="btn btn-default action-button shiny-bound-input">Move on to the next section</button>
+                    
                   </ul>
                 </div>
               </div>
@@ -978,12 +953,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                 <div aria-labelledby="4D-label" class="form-group shiny-input-checkboxgroup shiny-input-container shinyjs-hide shinyjs-resettable shiny-bound-input" id="4D" role="group" style="width:100%;" data-shinyjs-resettable-id="4D" data-shinyjs-resettable-type="CheckboxGroup" data-shinyjs-resettable-value="[&quot;None selected&quot;]">
                   <label class="control-label" id="4D-label" for="4D">(D) Select ALL true statements about the living trees in the tropical forest hectare.</label>
                   <div class="shiny-options-group">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" name="4D" value="None selected" checked="checked">
-                        <span>None selected</span>
-                      </label>
-                    </div>
+                    
                     <div class="checkbox">
                       <label>
                         <input type="checkbox" name="4D" value="A">
@@ -1010,7 +980,7 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled" id="Submit4D" type="button" disabled="">Submit 4D</button>
+                <button class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input" id="Submit4D" type="button"  >Submit 4D</button>
                 <div id="Feedback4D" class="shinyjs-hide">
                   <ul>
                     <strong>Answer explanation:</strong>
@@ -1044,4 +1014,5 @@ let rightAnswers = [["A", "E"], ["B", "C"], ["A"], ["A", "B"], ["C"], ["E"], ["A
   
 
 
-<div id="ss-connect-dialog" style="display: none;"></div><div id="ss-overlay" class="ss-gray-out" style="display: none;"></div><div class="shiny-server-account">  Logged in as <span class="shiny-server-username">Paul.St.Denis@stonybrook.edu</span>  <a href="https://bio201.courses.stonybrook.edu/ForestExperiment/_w_6f62ce13/__logout__">Logout</a></div></body></html>
+<div id="ss-connect-dialog" style="display: none;"></div><div id="ss-overlay" class="ss-gray-out" style="display: none;"></div><div class="shiny-server-account">  Logged in as <span class="shiny-server-username">Paul.St.Denis@stonybrook.edu</span>  <a href="https://bio201.courses.stonybrook.edu/ForestExperiment/_w_6f62ce13/__logout__">Logout</a></div>
+</body></html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Experiment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .text-warning { color: #ff7518; }
+        .text-primary { color: #2780e3; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Forest Experiment</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a class="nav-link" href="#" onclick="showTab('introduction')">Introduction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showTab('part1')">Part 1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showTab('part2')">Part 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showTab('part3')">Part 3</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showTab('part4')">Part 4</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="introduction" class="tab">
+            <h3>Your Assignment</h3>
+            <p>In this activity, you will work through a case study involving a forest of trees (plants). You will predict what will happen to the mass of the trees in the forest and other objects in the system.</p>
+            <p class="text-warning"><strong>Instructions (read carefully!):</strong></p>
+            <p>Use the navigation bar to explore the activity. Answer the questions presented and ensure you think through your responses carefully.</p>
+
+            <h4>Enter NetID</h4>
+            <p>Please ensure your <strong>stonybrook.edu</strong> NetID is recorded below.</p>
+            <input type="text" id="netID" class="form-control" placeholder="Enter NetID here before beginning Part 1">
+            <button class="btn btn-primary mt-2" onclick="recordNetIDAndNavigate('part1')">The NetID above is correct</button>
+            <div id="feedbackNames" class="text-warning hidden mt-3">NetID recorded, please begin with Part 1 using the navigation bar above.</div>
+        </div>
+
+        <div id="part1" class="tab hidden">
+            <h3>Part 1</h3>
+            <p class="text-primary">There are 2 questions in this section (1A-B).</p>
+            <p>Explore the pathways of matter and energy transformation in a forest of trees.</p>
+
+            <h4>Question 1A</h4>
+            <p>Select all correct statements about tree biomass in a forest:</p>
+            <div>
+                <label><input type="checkbox" id="1A_option1" value="carbon_oxygen"/> Most of a tree’s dry biomass is made up of carbon and oxygen atoms.</label><br>
+                <label><input type="checkbox" id="1A_option2" value="nitrogen_phosphorus"/> Most of a tree’s dry biomass is made up of nitrogen and phosphorus atoms.</label><br>
+                <label><input type="checkbox" id="1A_option3" value="sunlight"/> A portion of a tree’s dry biomass is made up of sunlight energy.</label><br>
+                <label><input type="checkbox" id="1A_option4" value="water_content"/> Almost none of a tree’s total biomass is wet biomass; trees do not contain much water.</label><br>
+                <label><input type="checkbox" id="1A_option5" value="carbon_based"/> Most of a tree’s dry biomass is made up of carbon-based molecules, like cellulose.</label>
+            </div>
+            <button class="btn btn-primary mt-2" onclick="submitQuestion('1A', '1B_container')">Submit Answer</button>
+
+            <div id="1B_container" class="hidden">
+                <h4>Question 1B</h4>
+                <p>Approximately how many grams of carbon do you think are contained in one hectare of tropical forest?</p>
+                <select id="question1B" class="form-control">
+                    <option value="">Select an answer</option>
+                    <option value="2M">2,000,000 g (~2 cars)</option>
+                    <option value="20M">20,000,000 g (~20 cars)</option>
+                    <option value="200M">200,000,000 g (~200 cars)</option>
+                </select>
+                <button class="btn btn-primary mt-2" onclick="submitQuestion('1B', 'part2')">Submit Answer</button>
+            </div>
+        </div>
+
+        <div id="part2" class="tab hidden">
+            <h3>Part 2</h3>
+            <p class="text-primary">There are 4 questions in this section (2A-D).</p>
+            <p>Explore how humans use resources from forests and the impacts of logging.</p>
+
+            <h4>Question 2A</h4>
+            <p>According to the figure above (select all that apply):</p>
+            <div>
+                <label><input type="checkbox" id="2A_option1" value="carbon_harvested_15_25"/> ...approximately 15-25% of the carbon in trees was harvested during logging.</label><br>
+                <label><input type="checkbox" id="2A_option2" value="carbon_harvested_65_75"/> ...approximately 65-75% of the carbon in trees was harvested during logging.</label><br>
+                <label><input type="checkbox" id="2A_option3" value="carbon_remaining_15_25"/> ...approximately 15-25% of the carbon in live trees remains in the forest hectare after logging.</label><br>
+                <label><input type="checkbox" id="2A_option4" value="carbon_remaining_65_75"/> ...approximately 65-75% of the carbon in live trees remains in the forest hectare after logging.</label>
+            </div>
+            <button class="btn btn-primary mt-2" onclick="submitQuestion('2A', '2B_container')">Submit Answer</button>
+
+            <div id="2B_container" class="hidden">
+                <h4>Question 2B</h4>
+                <p>After logging, there is approximately 157,000,000 g (~157 cars) of carbon in the trees still standing in the forest hectare. What do you predict will happen to the amount of carbon in the living trees in the forest hectare after 50 years?</p>
+                <select id="question2B" class="form-control">
+                    <option value="">Select an answer</option>
+                    <option value="increase">The amount of carbon will increase.</option>
+                    <option value="decrease">The amount of carbon will decrease.</option>
+                    <option value="same">The amount of carbon will stay approximately the same.</option>
+                </select>
+                <button class="btn btn-primary mt-2" onclick="submitQuestion('2B', '2C_container')">Submit Answer</button>
+            </div>
+
+            <div id="2C_container" class="hidden">
+                <h4>Question 2C</h4>
+                <p>Select ALL correct explanations for the pattern of the increase of carbon in the forest hectare over time:</p>
+                <div>
+                    <label><input type="checkbox" id="2C_option1" value="photosynthesis"/> The remaining living trees continued to photosynthesize, using some portion of the carbon molecules produced to add to their bodies.</label><br>
+                    <label><input type="checkbox" id="2C_option2" value="new_trees"/> New trees developed from seeds that germinated, developed, and grew larger in the spaces where trees were cut down.</label><br>
+                    <label><input type="checkbox" id="2C_option3" value="soil_absorption"/> The remaining living trees absorbed large carbon molecules (e.g., starch, cellulose, etc.) from the soil, and added these molecules to their bodies.</label>
+                </div>
+                <button class="btn btn-primary mt-2" onclick="submitQuestion('2C', '2D_container')">Submit Answer</button>
+            </div>
+
+            <div id="2D_container" class="hidden">
+                <h4>Question 2D</h4>
+                <p>The mass of the carbon in the living trees in the forest hectare increased by 47,000,000 g (~47 cars) over the 50-year period. Where did the carbon come from? Choose the best answer:</p>
+                <select id="question2D" class="form-control">
+                    <option value="">Select an answer</option>
+                    <option value="sunlight">Sunlight</option>
+                    <option value="organic_soil">Organic matter in the soil</option>
+                    <option value="nutrients_soil">Nutrients in the soil</option>
+                    <option value="atmosphere">Gases in the atmosphere</option>
+                </select>
+                <button class="btn btn-primary mt-2" onclick="submitQuestion('2D', 'part3')">Submit Answer</button>
+            </div>
+        </div>
+
+        <div id="part3" class="tab hidden">
+          <h3>Part 3</h3>
+          <p class="text-primary">There are 3 questions in this section (3A-C).</p>
+          <p>Explore how much carbon trees take in for photosynthesis.</p>
+
+          <h4>Question 3A</h4>
+          <p>Over the 50-year period, do you think that the amount of carbon that the trees will take in for photosynthesis will be less than, about equal to, or greater than the amount of carbon that they gained in their tissues as dry biomass?</p>
+          <select id="question3A" class="form-control">
+              <option value="">Select an answer</option>
+              <option value="less">The trees will take in less carbon for photosynthesis.</option>
+              <option value="equal">The trees will take in about the same amount of carbon for photosynthesis.</option>
+              <option value="more">The trees will take in more carbon for photosynthesis.</option>
+          </select>
+          <button class="btn btn-primary mt-2" onclick="submitQuestion('question3A', '3B_container')">Submit Answer</button>
+
+          <div id="3B_container" class="hidden">
+              <h4>Question 3B</h4>
+              <p>About how many grams of carbon will be taken in for photosynthesis by the living trees in this forest hectare over the 50-year period?</p>
+              <select id="question3B" class="form-control">
+                  <option value="">Select an answer</option>
+                  <option value="10M">About 10,000,000 g (~10 cars)</option>
+                  <option value="50M">About 50,000,000 g (~50 cars)</option>
+                  <option value="100M">About 100,000,000 g (~100 cars)</option>
+                  <option value="150M">About 150,000,000 g (~150 cars)</option>
+                  <option value="200M">About 200,000,000 g (~200 cars)</option>
+              </select>
+              <button class="btn btn-primary mt-2" onclick="submitQuestion('question3B', '3C_container')">Submit Answer</button>
+          </div>
+
+          <div id="3C_container" class="hidden">
+              <h4>Question 3C</h4>
+              <p>The trees will take in MORE carbon for photosynthesis than the amount of carbon that they will gain in their tissues. What happened to the remaining carbon?</p>
+              <select id="question3C" class="form-control">
+                  <option value="">Select an answer</option>
+                  <option value="respiration">The remaining carbon will be used as an input for cellular respiration.</option>
+                  <option value="energy">The remaining carbon will be burned up and converted to energy.</option>
+                  <option value="waste">The remaining carbon will be secreted by the roots as waste.</option>
+              </select>
+              <button class="btn btn-primary mt-2" onclick="submitQuestion('question3C', 'part4')">Submit Answer</button>
+          </div>
+      </div>
+
+      <div id="part4" class="tab hidden">
+          <h3>Part 4</h3>
+          <p class="text-primary">There are 4 questions in this section (4A-D).</p>
+          <p>Explore how much carbon trees release for cellular respiration.</p>
+
+          <h4>Question 4A</h4>
+          <p>About how many grams of carbon will be released for cellular respiration by the living trees in this forest hectare over the 50-year period?</p>
+          <select id="question4A" class="form-control">
+              <option value="">Select an answer</option>
+              <option value="10M">About 10,000,000 g (~10 cars)</option>
+              <option value="50M">About 50,000,000 g (~50 cars)</option>
+              <option value="100M">About 100,000,000 g (~100 cars)</option>
+              <option value="150M">About 150,000,000 g (~150 cars)</option>
+              <option value="200M">About 200,000,000 g (~200 cars)</option>
+          </select>
+          <button class="btn btn-primary mt-2" onclick="submitQuestion('question4A', '4B_container')">Submit Answer</button>
+
+          <div id="4B_container" class="hidden">
+              <h4>Question 4B</h4>
+              <p>What happened to the carbon atoms that were used by the trees as inputs for cellular respiration?</p>
+              <select id="question4B" class="form-control">
+                  <option value="">Select an answer</option>
+                  <option value="gas">They left the trees’ bodies as gases.</option>
+                  <option value="organic">They left the trees’ bodies as organic molecules.</option>
+                  <option value="burned">They were burned up in the trees’ bodies and no longer exist.</option>
+              </select>
+              <button class="btn btn-primary mt-2" onclick="submitQuestion('question4B', '4C_container')">Submit Answer</button>
+          </div>
+
+          <div id="4C_container" class="hidden">
+              <h4>Question 4C</h4>
+              <p>Select ALL true statements about cellular respiration in the living trees in the tropical forest hectare:</p>
+              <div>
+                  <label><input type="checkbox" id="4C_option1" value="roots_only"/> Cellular respiration occurred in all living cells in the trees’ roots, but not in the living cells in the trees’ leaves or stem.</label><br>
+                  <label><input type="checkbox" id="4C_option2" value="all_cells"/> Cellular respiration occurred in all living cells in the trees’ roots, leaves, and stem.</label><br>
+                  <label><input type="checkbox" id="4C_option3" value="night_only"/> Cellular respiration occurred in the trees during the night, but not during the day.</label><br>
+                  <label><input type="checkbox" id="4C_option4" value="all_time"/> Cellular respiration occurred in the trees during the day and night.</label>
+              </div>
+              <button class="btn btn-primary mt-2" onclick="submitQuestion('4C_option1', '4D_container')">Submit Answer</button>
+          </div>
+
+          <div id="4D_container" class="hidden">
+              <h4>Question 4D</h4>
+              <p>Select ALL true statements about the living trees in the tropical forest hectare:</p>
+              <div>
+                  <label><input type="checkbox" id="4D_option1" value="more_released"/> The trees in the forest hectare released more carbon (as carbon dioxide) than they added to their bodies as dry biomass.</label><br>
+                  <label><input type="checkbox" id="4D_option2" value="more_taken"/> The trees in the forest hectare took in more carbon (in carbon dioxide) than they added to their bodies as dry biomass.</label><br>
+                  <label><input type="checkbox" id="4D_option3" value="same_processes"/> The same processes of photosynthesis, growth, and cellular respiration occur in an entire hectare of trees as occurred in a single sunflower plant.</label><br>
+                  <label><input type="checkbox" id="4D_option4" value="same_state"/> After a 50-year period, the logged tropical forest returned to exactly the same state it was in before it was logged: with the same total biomass and the same number of tree species.</label>
+              </div>
+              <button class="btn btn-primary mt-2" onclick="submitQuestion('4D_option1', 'introduction')">Submit Answer</button>
+          </div>
+      </div>
+  </div>
+
+  <script>
+      function showTab(tabId) {
+          document.querySelectorAll('.tab').forEach(tab => tab.classList.add('hidden'));
+          document.getElementById(tabId).classList.remove('hidden');
+      }
+
+      function recordNetIDAndNavigate(nextTab) {
+          const netID = document.getElementById('netID').value;
+          if (netID && netID !== "Enter NetID here before beginning Part 1") {
+              document.getElementById('feedbackNames').classList.remove('hidden');
+              showTab(nextTab);
+          } else {
+              alert('Please enter a valid NetID.');
+          }
+      }
+
+      function submitQuestion(currentQuestion, nextElementId) {
+          const question = document.getElementById(currentQuestion);
+          if (question) {
+              if (question.value || Array.from(document.querySelectorAll(`#${currentQuestion} input`)).some(input => input.checked)) {
+                  if (nextElementId.startsWith('part')) {
+                      showTab(nextElementId);
+                  } else {
+                      document.getElementById(nextElementId).classList.remove('hidden');
+                  }
+              } else {
+                  alert('Please answer the question before submitting.');
+              }
+          } else {
+              document.getElementById(nextElementId).classList.remove('hidden');
+          }
+      }
+  </script>
+</body>
+</html>
