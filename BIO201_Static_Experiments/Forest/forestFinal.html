@@ -8,14 +8,14 @@
   <style>
     .shinyjs-hide {
       visibility: hidden;
+    }
 
-    }
     .correct {
-      background-color: rgba(0,255,0,.5);
+      background-color: rgba(0, 255, 0, .5);
     }
+
     .incorrect {
-      background-color: rgba(255,0,0,.5);
-      
+      background-color: rgba(255, 0, 0, .5);
     }
   </style>
   <script type="text/javascript">
@@ -34,7 +34,8 @@
     }
   </script>
 
-
+  <script src="forest.js"></script>
+  <script src="../quiz.js"></script>
   <script type="application/shiny-singletons">add739c82ab207ed2c80be4b7e4b181525eb7a75</script>
   <script
     type="application/html-dependencies">jquery[3.6.0];shiny-css[1.8.0];shiny-javascript[1.8.0];bootstrap[3.4.1]</script>
@@ -49,196 +50,6 @@
   <title>Movement of matter in a forest of trees</title>
   <link rel="stylesheet" type="text/css" href="./files/cosmo.min.css">
 
-  <script>
-    let score = 1
-    let rightAnswers = {
-      "1A": ["A", "E"],
-      "1B": ["C"],
-      "2A": ["B", "C"],
-      "2B": ["A"],
-      "2C": ["A", "B"],
-      "2D": ["D"],
-      "3A": ["C"],
-      "3B": ["E"],
-      "3C": ["A"],
-      "4A": ["D"],
-      "4B": ["A"],
-      "4C": ["B", "D"],
-      "4D": ["A", "B", "C"]
-    }
-    // /[\w\.]*@stonybrook.edu$/
-    addEventListener("DOMContentLoaded", (event) => {
-
-      let buttons = document.getElementsByTagName("button")
-      let buttonArray = Array.from(buttons);
-      let buttonNames = []
-      let answerCount = 0
-      for (button of buttonArray) {
-
-        buttonNames.push(button.id)
-
-
-        button.addEventListener("click", (e) => {
-          let questionID = e.currentTarget.id.split("Submit")[1];
-
-          let answers = [...document.querySelectorAll(`[name="${questionID}"]`)]
-          let checkedAnswers = answers.filter(ans => ans.checked)
-          let uncheckedAnswers = answers.filter(ans => !ans.checked)
-          let correctAnswers = rightAnswers[questionID]
-          let numberOfQuestions = answers.length
-          let wrongAnswers = 0
-
-          for (eachCheck of checkedAnswers) {
-          console.log(eachCheck.classList)
-             let   val = "correct"
-            if (!correctAnswers.includes(eachCheck.value)) {
-              wrongAnswers++
-            val = "incorrect"
-
-            }
-            eachCheck.disabled=true
-            eachCheck.nextElementSibling.classList.add(val)
-          }
-          for (eachCheck of uncheckedAnswers) {
-          console.log(eachCheck.classList)
-             let   val = "null"
-            if (correctAnswers.includes(eachCheck.value)) {
-              wrongAnswers++
-            val = "incorrect"
-
-            }
-            eachCheck.disabled=true
-            eachCheck.nextElementSibling.classList.add(val)
-          }
-
-          console.log((numberOfQuestions-wrongAnswers)/numberOfQuestions)
-          switch (e.currentTarget.id) {
-            // case "NameButton":
-            // console.log(document.getElementById("NameButton").nextSibling);
-            //   document.getElementById("1A").classList.remove("shinyjs-hide");
-            //   document.getElementById("Intro1A").classList.remove("shinyjs-hide");
-            //   document.getElementById("Submit1A").classList.remove("shinyjs-hide");
-            //   break;
-            case "Submit1A":
-              console.log(document.getElementById("Submit1A").nextSibling);
-              document.getElementById("Feedback1A").classList.remove("shinyjs-hide");
-              document.getElementById("Intro1B").classList.remove("shinyjs-hide");
-              break;
-
-            case "Submit1B":
-              document.getElementById("Feedback1B").classList.remove("shinyjs-hide");
-              document.getElementById("2A").classList.remove("shinyjs-hide");
-              document.getElementById("Submit2A").classList.remove("shinyjs-hide");
-              document.getElementById("IntroPart2").classList.remove("shinyjs-hide");
-            // setTimeout(()=>{
-             
-            // },1000);
-              break;
-            case "GoToPart2":
-              document.getElementById("P2").classList.remove("shinyjs-hide");
-              document.querySelector("[data-value='Part 2']").click()
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            break;
-
-            case "Submit2A":
-              document.getElementById("Feedback2A").classList.remove("shinyjs-hide");
-              document.getElementById("2B").classList.remove("shinyjs-hide");
-              document.getElementById("Submit2B").classList.remove("shinyjs-hide");
-              break;
-
-            case "Submit2B":
-              document.getElementById("Feedback2B").classList.remove("shinyjs-hide");
-              document.getElementById("Intro2C").classList.remove("shinyjs-hide");
-              document.getElementById("2C").classList.remove("shinyjs-hide");
-              document.getElementById("Submit2C").classList.remove("shinyjs-hide");
-              console.log("Submit2B");
-              break;
-
-            case "Submit2C":
-              document.getElementById("Feedback2C").classList.remove("shinyjs-hide");
-              document.getElementById("Intro2D").classList.remove("shinyjs-hide");
-              document.getElementById("2D").classList.remove("shinyjs-hide");
-              document.getElementById("Submit2D").classList.remove("shinyjs-hide");
-              console.log("Submit2C");
-            break;
-
-            case "Submit2D":
-              document.getElementById("Feedback2D").classList.remove("shinyjs-hide");
-              document.getElementById("IntroPart3").classList.remove("shinyjs-hide");
-              document.getElementById("3A").classList.remove("shinyjs-hide");
-              document.getElementById("Submit3A").classList.remove("shinyjs-hide");
-              console.log("Submit2D");
-            break;
-
-            case "GoToPart3":
-              document.getElementById("P3").classList.remove("shinyjs-hide");
-              document.querySelector("[data-value='Part 3']").click()
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            break;
-
-            case "Submit3A":
-              document.getElementById("Feedback3A").classList.remove("shinyjs-hide");
-              document.getElementById("3B").classList.remove("shinyjs-hide");
-              document.getElementById("Submit3B").classList.remove("shinyjs-hide");
-              console.log("Submit3A");
-              break;
-
-            case "Submit3B":
-              document.getElementById("Feedback3B").classList.remove("shinyjs-hide");
-              document.getElementById("3C").classList.remove("shinyjs-hide");
-              document.getElementById("Submit3C").classList.remove("shinyjs-hide");
-              console.log("Submit3B");
-              break;
-
-            case "Submit3C":
-              document.getElementById("Feedback3C").classList.remove("shinyjs-hide");
-              document.getElementById("IntroPart4").classList.remove("shinyjs-hide");
-              document.getElementById("CellularRespirationPlotShow").classList.remove("shinyjs-hide");
-              document.getElementById("4A").classList.remove("shinyjs-hide");
-              document.getElementById("Submit4A").classList.remove("shinyjs-hide");
-            break;
-
-            case "GoToPart4":
-              document.getElementById("P4").classList.remove("shinyjs-hide");
-              document.querySelector("[data-value='Part 4']").click()
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            break;
-
-            case "Submit4A":
-              document.getElementById("Feedback4A").classList.remove("shinyjs-hide");
-              document.getElementById("4B").classList.remove("shinyjs-hide");
-              document.getElementById("Submit4B").classList.remove("shinyjs-hide");
-              console.log("Submit4A");
-              break;
-
-            case "Submit4B":
-              document.getElementById("Feedback4B").classList.remove("shinyjs-hide");
-              document.getElementById("4C").classList.remove("shinyjs-hide");
-              document.getElementById("Submit4C").classList.remove("shinyjs-hide");
-              console.log("Submit4B");
-              break;
-
-            case "Submit4C":
-              document.getElementById("Feedback4C").classList.remove("shinyjs-hide");
-              document.getElementById("Intro4D").classList.remove("shinyjs-hide");
-              document.getElementById("ComparePhotoRespPlotShow").classList.remove("shinyjs-hide");
-              document.getElementById("4D").classList.remove("shinyjs-hide");
-              document.getElementById("Submit4D").classList.remove("shinyjs-hide");
-              console.log("Submit4C");
-              break;
-
-            case "Submit4D":
-              document.getElementById("Feedback4D").classList.remove("shinyjs-hide");
-              break;
-          }
-        })
-      }
-      console.log(buttonNames)
-
-
-    });
-
-  </script>
   <!-- <script src="./files/shinyjs-default-funcs.js"></script>
   <script>shinyjs.debug = false;</script>
 <script src="./files/sockjs.min.js"></script>
@@ -550,7 +361,7 @@
                 <p class="text-warning">End of Part 1, please move on to Part 2 using the tabs at the top of the page.
                 </p>
                 <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input" id="GoToPart2"
-                type="button">Go To Part 2</button>
+                  type="button">Go To Part 2</button>
               </div>
             </div>
           </div>
@@ -873,7 +684,7 @@
                 <p class="text-warning">End of Part 2, please move on to Part 3 using the tabs at the top of the page.
                 </p>
                 <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input" id="GoToPart3"
-                type="button">Go To Part 3</button>
+                  type="button">Go To Part 3</button>
               </div>
             </div>
           </div>
@@ -1087,7 +898,7 @@
                 <p class="text-warning">End of Part 3, please move on to Part 4 using the tabs at the top of the page.
                 </p>
                 <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input" id="GoToPart4"
-                type="button">Go To Part 4</button>
+                  type="button">Go To Part 4</button>
               </div>
             </div>
           </div>

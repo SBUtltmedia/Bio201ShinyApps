@@ -1,20 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: 'Source Sans 3';
   font-style: normal;
   font-weight: 300;
-  src: url(../fonts/Source_Sans_Pro_300.ttf) format('truetype');
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
 }
+
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: 'Source Sans 3';
   font-style: normal;
   font-weight: 400;
-  src: url(../fonts/Source_Sans_Pro_400.ttf) format('truetype');
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
 }
+
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: 'Source Sans 3';
   font-style: normal;
   font-weight: 700;
-  src: url(../fonts/Source_Sans_Pro_700.ttf) format('truetype');
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 }
 
 /*!
