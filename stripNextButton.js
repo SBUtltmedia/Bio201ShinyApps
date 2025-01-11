@@ -12,7 +12,6 @@ for (button of domItems){
     button.classList.remove("shinyjs-disabled")
     button.classList.remove("disabled")
     button.disabled= false
-if(button.id.includes("Next")||button.id.includes("Experiment")||button.id.includes("Button")){button.remove()
-}
+if(button.id.includes("Next")||button.id.includes("Experiment")||button.id.includes("Button")){button.remove()}
 }
 console.log(dom.serialize())
