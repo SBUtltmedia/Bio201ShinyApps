@@ -7,17 +7,21 @@
   <base href=".">
   <style>
     .shinyjs-hide {
-      visibility: hidden;
+        visibility: hidden;
     }
 
     .correct {
-      background-color: rgba(0, 255, 0, .5);
+        background-color: rgba(0, 255, 0, .5);
     }
 
     .incorrect {
-      background-color: rgba(255, 0, 0, .5);
+        background-color: rgba(255, 0, 0, .5);
     }
-  </style>
+    input[type="radio"],
+    input[type="checkbox"] {
+        cursor: pointer!important;
+    }
+</style>
   <?php
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);

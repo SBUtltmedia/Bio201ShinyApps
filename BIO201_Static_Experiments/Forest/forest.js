@@ -145,9 +145,11 @@ function eventHandler(e) {
         case "Submit4D":
             points += markAnswers(e.currentTarget.id);
             document.getElementById("Feedback4D").classList.remove("shinyjs-hide");
-            grade = points / qTotal;
+            grade = Math.floor((points / qTotal)*10**precison)/10**precison;
             console.log(grade * 100 + "%:grade");
             alert(grade * 100 + "%:Final Grade");
+            ses.grade = grade;
+            postLTI(ses,"");
             break;
     }
 }

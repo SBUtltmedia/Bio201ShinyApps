@@ -24,8 +24,6 @@ function eventHandler(e) {
         //   document.getElementById("Submit1A").classList.remove("shinyjs-hide");
         //   break;
         case "Submit1ABC":
-            ses.grade = .33333
-            postLTI(ses,"")
             points += markAnswers("Submit1A")
             points += markAnswers("Submit1B")
             points += markAnswers("Submit1C")
@@ -134,9 +132,11 @@ function eventHandler(e) {
             points += markAnswers(e.currentTarget.id);
             // Show feedback for 3B
             document.getElementById("Feedback3B").classList.remove("shinyjs-hide");
-            grade = points / qTotal;
+            grade = Math.floor((points / qTotal)*10**precison)/10**precison;
             console.log(grade * 100 + "%:grade");
             alert(grade * 100 + "%:Final Grade");
+            ses.grade = grade;
+            postLTI(ses,"");
             break;
 
     }
