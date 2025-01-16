@@ -24,7 +24,8 @@ function eventHandler(e) {
         //   document.getElementById("Submit1A").classList.remove("shinyjs-hide");
         //   break;
         case "Submit1ABC":
-
+            ses.grade = .33333
+            postLTI(ses,"")
             points += markAnswers("Submit1A")
             points += markAnswers("Submit1B")
             points += markAnswers("Submit1C")

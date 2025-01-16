@@ -26,6 +26,28 @@ console.log(buttonNames)
 
 });
 
+function submitLTI(grade){
+
+	if(typeof ses !== 'undefined'){
+        ses.grade= grade
+        postLTI(ses,"").then((result)=>{
+              
+                if (!result.match(/success/g)){
+                text=`<div style="color:red">Error submitting to Grade!</div>`;
+                setTimeout(()=>{
+                location.reload
+                window.parent.location.reload()
+                },2000);
+                     
+                }
+             	
+    })
+
+
+
+}
+}
+
 function markAnswers(targetID) {
     console.log(targetID);
 
