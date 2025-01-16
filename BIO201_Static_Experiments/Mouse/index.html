@@ -7,17 +7,17 @@
     <base href=".">
     <style>
         .shinyjs-hide {
-          visibility: hidden;
-    
+            visibility: hidden;
         }
+
         .correct {
-          background-color: rgba(0,255,0,.5);
+            background-color: rgba(0, 255, 0, .5);
         }
+
         .incorrect {
-          background-color: rgba(255,0,0,.5);
-          
+            background-color: rgba(255, 0, 0, .5);
         }
-      </style>
+    </style>
     <script type="text/javascript">
         (function () {
             var workerId = '_w_4f4ffe67';
@@ -34,7 +34,8 @@
         }
     </script>
 
-
+    <script src="mouse.js"></script>
+    <script src="../quiz.js"></script>
     <script type="application/shiny-singletons">add739c82ab207ed2c80be4b7e4b181525eb7a75</script>
     <script
         type="application/html-dependencies">jquery[3.6.0];shiny-css[1.8.0];shiny-javascript[1.8.0];bootstrap[3.4.1]</script>
@@ -49,184 +50,12 @@
     <title>Movement of matter in animals</title>
     <link rel="stylesheet" type="text/css" href="./files/cosmo.min.css">
 
-<script>
-    let score = 1
-    let rightAnswers = {
-        "1A": ["A", "E"],
-        "1B": ["C"],
-        "2A": ["B", "C"],
-        "2B": ["A"],
-        "2C": ["A", "B"],
-        "2D": ["D"],
-        "3A": ["C"],
-        "3B": ["E"],
-        "3C": ["A"],
-        "4A": ["D"],
-        "4B": ["A"],
-        "4C": ["B", "D"],
-        "4D": ["A", "B", "C"]
-    }
-    // /[\w\.]*@stonybrook.edu$/
-    addEventListener("DOMContentLoaded", (event) => {
-
-        let buttons = document.getElementsByTagName("button")
-        let buttonArray = Array.from(buttons);
-        let buttonNames = []
-        let answerCount = 0
-        for (button of buttonArray) {
-
-            buttonNames.push(button.id)
-
-
-            button.addEventListener("click", (e) => {
-                let questionID = e.currentTarget.id.split("Submit")[1];
-
-                let answers = [...document.querySelectorAll(`[name="${questionID}"]`)]
-                let checkedAnswers = answers.filter(ans => ans.checked)
-                let uncheckedAnswers = answers.filter(ans => !ans.checked)
-                let correctAnswers = rightAnswers[questionID]
-                let numberOfQuestions = answers.length
-                let wrongAnswers = 0
-
-                for (eachCheck of checkedAnswers) {
-                    console.log(eachCheck.classList)
-                    let val = "correct"
-                    if (!correctAnswers.includes(eachCheck.value)) {
-                        wrongAnswers++
-                        val = "incorrect"
-
-                    }
-                    eachCheck.disabled = true
-                    eachCheck.nextElementSibling.classList.add(val)
-                }
-                for (eachCheck of uncheckedAnswers) {
-                    console.log(eachCheck.classList)
-                    let val = "null"
-                    if (correctAnswers.includes(eachCheck.value)) {
-                        wrongAnswers++
-                        val = "incorrect"
-
-                    }
-                    eachCheck.disabled = true
-                    eachCheck.nextElementSibling.classList.add(val)
-                }
-
-                console.log((numberOfQuestions - wrongAnswers) / numberOfQuestions)
-                switch (e.currentTarget.id) {
-                    // case "NameButton":
-                    // console.log(document.getElementById("NameButton").nextSibling);
-                    //   document.getElementById("1A").classList.remove("shinyjs-hide");
-                    //   document.getElementById("Intro1A").classList.remove("shinyjs-hide");
-                    //   document.getElementById("Submit1A").classList.remove("shinyjs-hide");
-                    //   break;
-                    case "Submit1ABC":
-                        // Show question 1D and its submit button
-                        document.getElementById("1D").classList.remove("shinyjs-hide");
-                        document.getElementById("Submit1D").classList.remove("shinyjs-hide");
-                        break;
-
-                    case "Submit1D":
-                        // Show feedback for 1D, plus next question 1E and its button
-                        document.getElementById("Feedback1D").classList.remove("shinyjs-hide");
-                        document.getElementById("Introduction1EF").classList.remove("shinyjs-hide");
-                        document.getElementById("MassBreakdown").classList.remove("shinyjs-hide");
-                        document.getElementById("1E").classList.remove("shinyjs-hide");
-                        document.getElementById("Submit1E").classList.remove("shinyjs-hide");
-                        break;
-
-                    case "Submit1E":
-                        // Show feedback for 1E, plus next question 1F and its button
-                        document.getElementById("Feedback1E").classList.remove("shinyjs-hide");
-                        document.getElementById("1F").classList.remove("shinyjs-hide");
-                        document.getElementById("Submit1F").classList.remove("shinyjs-hide");
-                        break;
-
-                    case "Submit1F":
-                        // Show feedback for 1F
-                        document.getElementById("Feedback1F").classList.remove("shinyjs-hide");
-                        break;
-
-                    case "GoToPart2":
-                        document.getElementById("P2").classList.remove("shinyjs-hide");
-                        document.querySelector("[data-value='Part 2']").click()
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                        break;
-
-
-                    // ---------------------------
-                    // EXPERIMENT 2
-                    // ---------------------------
-
-                    case "Submit2A":
-                        // Show the explanation for 2A (if you have it) plus next chunk: 2B, 2C, and submit
-                        // document.getElementById("Feedback2A").classList.remove("shinyjs-hide"); // Only if you have a line for Feedback2A
-                        document.getElementById("Experiment2GasIntro").classList.remove("shinyjs-hide");
-                        document.getElementById("2B").classList.remove("shinyjs-hide");
-                        document.getElementById("2C").classList.remove("shinyjs-hide");
-                        document.getElementById("Submit2BC").classList.remove("shinyjs-hide");
-                        break;
-
-                    case "Submit2BC":
-                        // Reveal question 2D and its button
-                        document.getElementById("2D").classList.remove("shinyjs-hide");
-                        document.getElementById("Submit2D").classList.remove("shinyjs-hide");
-                        break;
-
-                    case "Submit2D":
-                        // Show feedback for 2D, plus next question 2E and its button
-                        document.getElementById("Feedback2D").classList.remove("shinyjs-hide");
-                        document.getElementById("2E").classList.remove("shinyjs-hide");
-                        document.getElementById("Submit2E").classList.remove("shinyjs-hide");
-                        break;
-
-                    case "Submit2E":
-                        // Show feedback for 2E, plus next question 2F and its button
-                        document.getElementById("Feedback2E").classList.remove("shinyjs-hide");
-                        document.getElementById("2F").classList.remove("shinyjs-hide");
-                        document.getElementById("Submit2F").classList.remove("shinyjs-hide");
-                        break;
-
-                    case "Submit2F":
-                        // Show feedback for 2F
-                        document.getElementById("Feedback2F").classList.remove("shinyjs-hide");
-                        break;
-
-                    case "GoToPart3":
-                        document.getElementById("P3").classList.remove("shinyjs-hide");
-                        document.querySelector("[data-value='Part 3']").click()
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                        break;
-
-
-                    // ---------------------------
-                    // EXPERIMENT 3
-                    // ---------------------------
-
-                    case "Submit3A":
-                        // Show question 3B and its button
-                        document.getElementById("3B").classList.remove("shinyjs-hide");
-                        document.getElementById("Submit3B").classList.remove("shinyjs-hide");
-                        break;
-
-                    case "Submit3B":
-                        // Show feedback for 3B
-                        document.getElementById("Feedback3B").classList.remove("shinyjs-hide");
-                        break;
-                }
-            })
-        }
-        console.log(buttonNames)
-
-
-    });
-
-</script>
     <!-- <script src="./files/shinyjs-default-funcs.js"></script>
   <script>shinyjs.debug = false;</script>
 <script src="./files/sockjs.min.js"></script>
 <script src="./files/shiny-server-client.min.js"></script> -->
-<!-- <script>preShinyInit({ reconnect: true, reconnectTimeout: 15000, disableProtocols: ["htmlfile", "xdr-streaming", "xdr-polling"], token: true, workerId: true, subappTag: true, extendSession: true, fixupInternalLinks: true });</script> -->
-<link rel="stylesheet" type="text/css" href="./files/rstudio-connect.css">
+    <!-- <script>preShinyInit({ reconnect: true, reconnectTimeout: 15000, disableProtocols: ["htmlfile", "xdr-streaming", "xdr-polling"], token: true, workerId: true, subappTag: true, extendSession: true, fixupInternalLinks: true });</script> -->
+    <link rel="stylesheet" type="text/css" href="./files/rstudio-connect.css">
 
 </head>
 
@@ -238,19 +67,19 @@
                 <span class="navbar-brand">Movement of matter in animals</span>
             </div>
             <ul class="nav navbar-nav nav-underline" data-tabsetid="4684">
-                <li>
+                <!-- <li>
                     <a href="https://bio201.courses.stonybrook.edu/MouseExperiment/_w_4f4ffe67/#tab-4684-1"
                         data-toggle="tab" data-bs-toggle="tab" data-value="Introduction">Introduction</a>
-                </li>
+                </li> -->
                 <li class="active">
                     <a href="https://bio201.courses.stonybrook.edu/MouseExperiment/_w_4f4ffe67/#tab-4684-2"
                         data-toggle="tab" data-bs-toggle="tab" data-value="Experiment 1">Experiment 1</a>
                 </li>
-                <li>
+                <li id="P2" class="shinyjs-hide">
                     <a href="https://bio201.courses.stonybrook.edu/MouseExperiment/_w_4f4ffe67/#tab-4684-3"
                         data-toggle="tab" data-bs-toggle="tab" data-value="Experiment 2">Experiment 2</a>
                 </li>
-                <li>
+                <li id="P3" class="shinyjs-hide">
                     <a href="https://bio201.courses.stonybrook.edu/MouseExperiment/_w_4f4ffe67/#tab-4684-4"
                         data-toggle="tab" data-bs-toggle="tab" data-value="Experiment 3">Experiment 3</a>
                 </li>
@@ -376,19 +205,19 @@
 
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="1A" value="A" disabled="" class="disabled">
+                                            <input type="radio" name="1A" value="A" class="">
                                             <span>Decrease slightly</span>
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="1A" value="B" disabled="" class="disabled">
+                                            <input type="radio" name="1A" value="B" class="">
                                             <span>Increase slightly</span>
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="1A" value="C" disabled="" class="disabled">
+                                            <input type="radio" name="1A" value="C" class="">
                                             <span>Stay the same</span>
                                         </label>
                                     </div>
@@ -407,19 +236,19 @@
 
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="1B" value="A" disabled="" class="disabled">
+                                            <input type="radio" name="1B" value="A" class="">
                                             <span>Decrease slightly</span>
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="1B" value="B" disabled="" class="disabled">
+                                            <input type="radio" name="1B" value="B" class="">
                                             <span>Increase slightly</span>
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="1B" value="C" disabled="" class="disabled">
+                                            <input type="radio" name="1B" value="C" class="">
                                             <span>Stay the same</span>
                                         </label>
                                     </div>
@@ -438,19 +267,19 @@
 
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="1C" value="A" disabled="" class="disabled">
+                                            <input type="radio" name="1C" value="A" class="">
                                             <span>Decrease slightly</span>
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="1C" value="B" disabled="" class="disabled">
+                                            <input type="radio" name="1C" value="B" class="">
                                             <span>Increase slightly</span>
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="1C" value="C" disabled="" class="disabled">
+                                            <input type="radio" name="1C" value="C" class="">
                                             <span>Stay the same</span>
                                         </label>
                                     </div>
@@ -466,38 +295,13 @@
                                 <em>When you press the submit button, your responses will be recorded and you will no
                                     longer be able to change your answer.</em>
                             </p>
-                            <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input disabled"
-                                id="Submit1ABC" type="button" disabled="">Submit 1 A-C</button>
+                            <button class="btn btn-default action-button shiny-bound-input" id="Submit1ABC"
+                                type="button">Submit 1 A-C</button>
                             <p></p>
 
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="shiny-plot-output html-fill-item shiny-bound-output" id="FoodMass"
-                                style="width:100%;height:400px;" aria-live="polite">
-                                <img src="./files/graph1a.png" style="width: 19.5em;" alt="">
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="shiny-plot-output html-fill-item shiny-bound-output" id="WaterMass"
-                                style="width:100%;height:400px;" aria-live="polite">
-                                <img src="./files/graph1b.png" style="width: 19.5em;" alt="">
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="shiny-plot-output html-fill-item shiny-bound-output" id="MouseMass"
-                                style="width:100%;height:400px;" aria-live="polite">
-                                <img src="./files/graph1c.png" style="width: 19.5em;" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12"
-                            style="padding-left:5px; padding-right:5px; padding-top:5px; padding-bottom:15px">
 
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="col-sm-12">
                             <div aria-labelledby="1D-label"
@@ -505,6 +309,32 @@
                                 id="1D" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="1D"
                                 data-shinyjs-resettable-type="RadioButtons"
                                 data-shinyjs-resettable-value="None selected">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="shiny-plot-output html-fill-item shiny-bound-output" id="FoodMass"
+                                            style="width:100%;height:400px;" aria-live="polite">
+                                            <img src="./files/graph1a.png" style="width: 19.5em;" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="shiny-plot-output html-fill-item shiny-bound-output" id="WaterMass"
+                                            style="width:100%;height:400px;" aria-live="polite">
+                                            <img src="./files/graph1b.png" style="width: 19.5em;" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="shiny-plot-output html-fill-item shiny-bound-output" id="MouseMass"
+                                            style="width:100%;height:400px;" aria-live="polite">
+                                            <img src="./files/graph1c.png" style="width: 19.5em;" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12"
+                                        style="padding-left:5px; padding-right:5px; padding-top:5px; padding-bottom:15px">
+
+                                    </div>
+                                </div>
                                 <label class="control-label" id="1D-label" for="1D">(D) Choose the best explanation for
                                     the patterns observed in 1A-C.</label>
                                 <div class="shiny-options-group">
@@ -542,9 +372,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <button
-                                class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled"
-                                id="Submit1D" type="button" disabled="">Submit 1D</button>
+                            <button class="btn btn-default action-button shinyjs-hide shiny-bound-input" id="Submit1D"
+                                type="button">Submit 1D</button>
                             <p></p>
                             <div id="Feedback1D" class="shinyjs-hide">
                                 <ul>
@@ -638,9 +467,8 @@
                             <div id="Submit1E" class="shinyjs-hide">
                                 <p>If you are having trouble submitting your response, make sure you have unchecked
                                     'None selected.'</p>
-                                <button
-                                    class="btn btn-default action-button shinyjs-disabled shiny-bound-input disabled"
-                                    id="Submit1E" type="button" disabled="">Submit 1E</button>
+                                <button class="btn btn-default action-button shiny-bound-input" id="Submit1E"
+                                    type="button">Submit 1E</button>
                             </div>
                         </div>
                     </div>
@@ -711,9 +539,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <button
-                                class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled"
-                                id="Submit1F" type="button" disabled="">Submit 1F</button>
+                            <button class="btn btn-default action-button shinyjs-hide shiny-bound-input" id="Submit1F"
+                                type="button">Submit 1F</button>
                             <p></p>
                             <div id="Feedback1F" class="shinyjs-hide">
                                 <ul>
@@ -740,8 +567,8 @@
                                 </ul>
                                 <p class="text-warning">End of Experiment 1, please move on to Experiment 2 using the
                                     tabs at the top of the page.</p>
-                                <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input"
-                                    id="GoToPart2" type="button">Go To Part 2</button>
+                                <button class="btn btn-default action-button shiny-bound-input" id="GoToExperiment2"
+                                    type="button">Go To Experiment 2</button>
                             </div>
                         </div>
                     </div>
@@ -788,26 +615,26 @@
 
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="2A" value="A" disabled="" class="disabled">
+                                            <input type="radio" name="2A" value="A" class="">
                                             <span>Decrease slightly</span>
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="2A" value="B" disabled="" class="disabled">
+                                            <input type="radio" name="2A" value="B" class="">
                                             <span>Increase slightly</span>
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="2A" value="C" disabled="" class="disabled">
+                                            <input type="radio" name="2A" value="C" class="">
                                             <span>Stay the same</span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input disabled"
-                                id="Submit2A" type="button" disabled="">Submit 2A</button>
+                            <button class="btn btn-default action-button shiny-bound-input" id="Submit2A"
+                                type="button">Submit 2A</button>
                             <p></p>
 
                             <div id="Feedback2A" class="shinyjs-hide">
@@ -821,8 +648,8 @@
                         </div>
                         <div class="col-sm-6"
                             style="padding-left:5px; padding-right:5px; padding-top:5px; padding-bottom:15px">
-                            <div class="shiny-plot-output html-fill-item shiny-bound-output" id="ClosedCage"
-                                style="width:100%;height:400px;" aria-live="polite">
+                            <div class="shiny-plot-output html-fill-item shiny-bound-output shinyjs-hide"
+                                id="ClosedCage" style="width:100%;height:400px;" aria-live="polite">
                                 <img src="./files/graph3.png" style="width: 32em;" alt="">
                             </div>
                         </div>
@@ -912,33 +739,13 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12" align="center">
-                            <button
-                                class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled"
-                                id="Submit2BC" type="button" disabled="">Submit 2BC</button>
+                            <button class="btn btn-default action-button shinyjs-hide shiny-bound-input" id="Submit2BC"
+                                type="button">Submit 2BC</button>
                             <p></p>
 
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="shiny-plot-output html-fill-item shiny-bound-output" id="CO2Mass"
-                                style="width:100%;height:400px;" aria-live="polite">
-                                <img src="./files/graph5a.png" style="width: 30em;" alt="">
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="shiny-plot-output html-fill-item shiny-bound-output" id="O2Mass"
-                                style="width:100%;height:400px;" aria-live="polite">
-                                <img src="./files/graph5b.png" style="width: 30em;" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12"
-                            style="padding-left:5px; padding-right:5px; padding-top:5px; padding-bottom:15px">
 
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="col-sm-12">
                             <div aria-labelledby="2D-label"
@@ -946,6 +753,26 @@
                                 id="2D" role="radiogroup" style="width:100%;" data-shinyjs-resettable-id="2D"
                                 data-shinyjs-resettable-type="RadioButtons"
                                 data-shinyjs-resettable-value="None selected">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="shiny-plot-output html-fill-item shiny-bound-output" id="CO2Mass"
+                                            style="width:100%;height:400px;" aria-live="polite">
+                                            <img src="./files/graph5a.png" style="width: 30em;" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="shiny-plot-output html-fill-item shiny-bound-output" id="O2Mass"
+                                            style="width:100%;height:400px;" aria-live="polite">
+                                            <img src="./files/graph5b.png" style="width: 30em;" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12"
+                                        style="padding-left:5px; padding-right:5px; padding-top:5px; padding-bottom:15px">
+
+                                    </div>
+                                </div>
                                 <label class="control-label" id="2D-label" for="2D">(D) Choose the best causal
                                     explanation(s) for the patterns observed in 2B and 2C.</label>
                                 <div class="shiny-options-group">
@@ -978,9 +805,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <button
-                                class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled"
-                                id="Submit2D" type="button" disabled="">Submit 2D</button>
+                            <button class="btn btn-default action-button shinyjs-hide shiny-bound-input" id="Submit2D"
+                                type="button">Submit 2D</button>
                             <p></p>
                             <div id="Feedback2D" class="shinyjs-hide">
                                 <ul>
@@ -1030,9 +856,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <button
-                                class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled"
-                                id="Submit2E" type="button" disabled="">Submit 2E</button>
+                            <button class="btn btn-default action-button shinyjs-hide shiny-bound-input" id="Submit2E"
+                                type="button">Submit 2E</button>
                             <p></p>
                             <div id="Feedback2E" class="shinyjs-hide">
                                 <ul>
@@ -1090,9 +915,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <button
-                                class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled"
-                                id="Submit2F" type="button" disabled="">Submit 2F</button>
+                            <button class="btn btn-default action-button shinyjs-hide shiny-bound-input" id="Submit2F"
+                                type="button">Submit 2F</button>
                             <p></p>
                             <div id="Feedback2F" class="shinyjs-hide">
                                 <ul>
@@ -1125,8 +949,8 @@
                                 </ul>
                                 <p class="text-warning">End of Experiment 2, please move on to Experiment 3 using the
                                     tabs at the top of the page.</p>
-                                <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input"
-                                    id="GoToPart3" type="button">Go To Part 3</button>
+                                <button class="btn btn-default action-button shiny-bound-input" id="GoToExperiment3"
+                                    type="button">Go To Experiment 3</button>
                             </div>
                         </div>
                     </div>
@@ -1177,31 +1001,31 @@
 
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="3A" value="A" disabled="" class="disabled">
+                                            <input type="radio" name="3A" value="A" class="">
                                             <span>Decrease slightly</span>
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="3A" value="B" disabled="" class="disabled">
+                                            <input type="radio" name="3A" value="B" class="">
                                             <span>Increase slightly</span>
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="3A" value="C" disabled="" class="disabled">
+                                            <input type="radio" name="3A" value="C" class="">
                                             <span>Stay the same</span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-default action-button shinyjs-disabled shiny-bound-input disabled"
-                                id="Submit3A" type="button" disabled="">Submit 3A</button>
+                            <button class="btn btn-default action-button shiny-bound-input" id="Submit3A"
+                                type="button">Submit 3A</button>
                             <p></p>
 
                         </div>
                         <div class="col-sm-6">
-                            <div class="shiny-plot-output html-fill-item shiny-bound-output" id="OpenCage"
+                            <div class="shiny-plot-output html-fill-item shiny-bound-output shinyjs-hide" id="OpenCage"
                                 style="width:100%;height:400px;" aria-live="polite">
                                 <img src="./files/graph7.png" style="width: 30em;" alt="">
                             </div>
@@ -1258,9 +1082,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <button
-                                class="btn btn-default action-button shinyjs-disabled shinyjs-hide shiny-bound-input disabled"
-                                id="Submit3B" type="button" disabled="">Submit 3B</button>
+                            <button class="btn btn-default action-button shinyjs-hide shiny-bound-input" id="Submit3B"
+                                type="button">Submit 3B</button>
                             <p></p>
                             <div id="Feedback3B" class="shinyjs-hide">
                                 <ul>
@@ -1292,6 +1115,8 @@
     <div class="shiny-server-account"> Logged in as <span
             class="shiny-server-username">Paul.St.Denis@stonybrook.edu</span> <a
             href="https://bio201.courses.stonybrook.edu/MouseExperiment/_w_4f4ffe67/__logout__">Logout</a></div>
+
+
 </body>
 
 </html>

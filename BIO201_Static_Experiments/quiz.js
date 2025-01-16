@@ -33,7 +33,6 @@ function markAnswers(targetID) {
   
     let questionID = targetID.split("Submit")[1];
     let cssMap = { true: "correct", false: "incorrect" }
-console.log(qID)
 
     let answers = [...document.querySelectorAll(`[name="${questionID}"]`)]
 
