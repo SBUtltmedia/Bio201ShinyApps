@@ -25,7 +25,7 @@ let rightAnswers = {
         // PLANT BASICS 1
         // ======================================
         case "SubmitPB1A":
-            points += markAnswers("PB1A");
+            points += markAnswers(e.currentTarget.id);
             document.getElementById("FeedbackPB1A").classList.remove("shinyjs-hide");
             document.getElementById("WetDryMass").classList.remove("shinyjs-hide");
             document.getElementById("AtomConcentration").classList.remove("shinyjs-hide");
@@ -35,7 +35,7 @@ let rightAnswers = {
             break;
 
         case "SubmitPB1B":
-            points += markAnswers("PB1B");
+            points += markAnswers(e.currentTarget.id);
             document.getElementById("FeedbackPB1B").classList.remove("shinyjs-hide");
             document.getElementById("Cellulose").classList.remove("shinyjs-hide");
             document.getElementById("Graph2").classList.remove("shinyjs-hide");
@@ -46,7 +46,7 @@ let rightAnswers = {
             break;
 
         case "SubmitPB1C":
-            points += markAnswers("PB1C");
+            points += markAnswers(e.currentTarget.id);
             document.getElementById("FeedbackPB1C").classList.remove("shinyjs-hide");
             document.getElementById("PlantMass").classList.remove("shinyjs-hide");
             document.getElementById("Graph3").classList.remove("shinyjs-hide");
@@ -69,7 +69,7 @@ let rightAnswers = {
         // PLANT BASICS 2
         // ======================================
         case "SubmitPB2A":
-            points += markAnswers("PB2A");
+            points += markAnswers(e.currentTarget.id);
             document.getElementById("FeedbackPB2A").classList.remove("shinyjs-hide");
             document.getElementById("GasCanistersIntro").classList.remove("shinyjs-hide");
             document.getElementById("PB2B").classList.remove("shinyjs-hide");
@@ -80,7 +80,7 @@ let rightAnswers = {
             break;
 
         case "SubmitPB2B":
-            points += markAnswers("PB2B");
+            points += markAnswers(e.currentTarget.id);
             document.getElementById("FeedbackPB2B").classList.remove("shinyjs-hide");
             document.getElementById("MoleculeMasses").classList.remove("shinyjs-hide");
             document.getElementById("Graph4").classList.remove("shinyjs-hide");
@@ -90,7 +90,7 @@ let rightAnswers = {
             break;
 
         case "SubmitPB2C":
-            points += markAnswers("PB2C");
+            points += markAnswers(e.currentTarget.id);
             document.getElementById("FeedbackPB2C").classList.remove("shinyjs-hide");
             document.getElementById("CelluloseMasses").classList.remove("shinyjs-hide");
             document.getElementById("CelluloseMassesCaption").classList.remove("shinyjs-hide");
@@ -104,7 +104,7 @@ let rightAnswers = {
             break;
 
         case "SubmitPB2D":
-            points += markAnswers("PB2D");
+            points += markAnswers(e.currentTarget.id);
             document.getElementById("FeedbackPB2D").classList.remove("shinyjs-hide");
             document.getElementById("Growth").classList.remove("shinyjs-hide");
             document.getElementById("Experiment1Intro").classList.remove("shinyjs-hide");
@@ -124,7 +124,7 @@ let rightAnswers = {
         // EXPERIMENT 1
         // ======================================
         case "Submit1A":
-            points += markAnswers("1A");
+            points += markAnswers(e.currentTarget.id);
             document.getElementById("Feedback1A").classList.remove("shinyjs-hide");
             document.getElementById("PlantInitialFinal").classList.remove("shinyjs-hide");
             document.getElementById("1B").classList.remove("shinyjs-hide");
@@ -133,7 +133,7 @@ let rightAnswers = {
             break;
 
         case "Submit1B":
-            points += markAnswers("1B");
+            points += markAnswers(e.currentTarget.id);
             document.getElementById("Feedback1B").classList.remove("shinyjs-hide");
             document.getElementById("Graph6").classList.remove("shinyjs-hide");
             document.getElementById("PlantWetMass").classList.remove("shinyjs-hide");
@@ -143,7 +143,7 @@ let rightAnswers = {
             break;
 
         case "Submit1C":
-            points += markAnswers("1C");
+            points += markAnswers(e.currentTarget.id);
             document.getElementById("Feedback1C").classList.remove("shinyjs-hide");
             document.getElementById("PlantDryMass").classList.remove("shinyjs-hide");
             document.getElementById("1D").classList.remove("shinyjs-hide");
@@ -152,7 +152,7 @@ let rightAnswers = {
             break;
 
         case "Submit1D":
-            points += markAnswers("1D");
+            points += markAnswers(e.currentTarget.id);
             document.getElementById("Feedback1D").classList.remove("shinyjs-hide");
             document.getElementById("MeasureSoil").classList.remove("shinyjs-hide");
             document.getElementById("1E").classList.remove("shinyjs-hide");
@@ -161,7 +161,7 @@ let rightAnswers = {
             break;
 
         case "Submit1E":
-            points += markAnswers("1E");
+            points += markAnswers(e.currentTarget.id);
             document.getElementById("Feedback1E").classList.remove("shinyjs-hide");
             document.getElementById("Graph7").classList.remove("shinyjs-hide");
             document.getElementById("1F").classList.remove("shinyjs-hide");
@@ -170,7 +170,7 @@ let rightAnswers = {
             break;
 
         case "Submit1F":
-            points += markAnswers("1F");
+            points += markAnswers(e.currentTarget.id);
             document.getElementById("Feedback1F").classList.remove("shinyjs-hide");
             document.getElementById("PlantMassDryOnlyPlot").classList.remove("shinyjs-hide");
             document.getElementById("Graph8").classList.remove("shinyjs-hide");
@@ -192,7 +192,7 @@ let rightAnswers = {
         // EXPERIMENT 2
         // ======================================
         case "Submit2A":
-            points += markAnswers("2A");
+            points += markAnswers(e.currentTarget.id);
             document.getElementById("Feedback2A").classList.remove("shinyjs-hide");
             document.getElementById("Graph9").classList.remove("shinyjs-hide");
             document.getElementById("Experiment2GasIntro").classList.remove("shinyjs-hide");
@@ -205,8 +205,8 @@ let rightAnswers = {
             break;
 
         case "Submit2BC":
-            points += markAnswers("2B");
-            points += markAnswers("2C");
+            points += markAnswers("Submit2B");
+            points += markAnswers("Submit2C");
             document.getElementById("Graph11a").classList.remove("shinyjs-hide");
             document.getElementById("Graph11b").classList.remove("shinyjs-hide");
             document.getElementById("2D").classList.remove("shinyjs-hide");
@@ -215,7 +215,7 @@ let rightAnswers = {
             break;
 
         case "Submit2D":
-            points += markAnswers("2D");
+            points += markAnswers(e.currentTarget.id);
             document.getElementById("Feedback2D").classList.remove("shinyjs-hide");
             document.getElementById("2E").classList.remove("shinyjs-hide");
             document.getElementById("Submit2E").classList.remove("shinyjs-hide");
@@ -223,9 +223,11 @@ let rightAnswers = {
             break;
 
         case "Submit2E":
-            points += markAnswers("2E");
+  
+
+            points += markAnswers(e.currentTarget.id);
             document.getElementById("Feedback2E").classList.remove("shinyjs-hide");
-            grade = points / qTotal;
+            grade = Math.floor((points / qTotal)*10**precison)/10**precison;
             console.log(grade * 100 + "%:grade");
             alert(grade * 100 + "%:Final Grade");
             break;

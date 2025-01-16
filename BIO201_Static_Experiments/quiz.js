@@ -2,6 +2,7 @@ let score = 1
 let points = 0;
 let qTotal = 0;
 let grade = 0;
+let precison = 4;
 // /[\w\.]*@stonybrook.edu$/
 addEventListener("DOMContentLoaded", (event) => {
 
@@ -32,7 +33,7 @@ function markAnswers(targetID) {
   
     let questionID = targetID.split("Submit")[1];
     let cssMap = { true: "correct", false: "incorrect" }
-
+console.log(qID)
 
     let answers = [...document.querySelectorAll(`[name="${questionID}"]`)]
 
@@ -41,10 +42,11 @@ function markAnswers(targetID) {
     // let uncheckedAnswers = answers.filter(ans => !ans.checked)
     let correctAnswers = rightAnswers[questionID]
     let wrongAnswers = 0
-
+    console.log(answers) 
     for (eachCheck of answers) {
         eachCheck.disabled = true
         let css = cssMap[correctAnswers.includes(eachCheck.value)]
+
         eachCheck.nextElementSibling.classList.add(css)
     }
     let userChecked = answers.filter(ans => ans.checked).map((ans => ans.value))
