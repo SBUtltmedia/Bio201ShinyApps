@@ -1,1 +1,1 @@
-./BIO201_Static_Experiments/Plant/index.html
+index.html
