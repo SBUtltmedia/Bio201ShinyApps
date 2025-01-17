@@ -145,9 +145,8 @@ function eventHandler(e) {
         case "Submit4D":
             points += markAnswers(e.currentTarget.id);
             document.getElementById("Feedback4D").classList.remove("shinyjs-hide");
-            grade = Math.floor((points / qTotal)*10**precison)/10**precison;
-            console.log(grade * 100 + "%:grade");
-            alert(grade * 100 + "%:Final Grade");
+            grade = Math.floor((points / qTotal)*10**precison)/10**precison;       
+            document.getElementsByClassName("text-success")[0].innerHTML+=" Final Grade: "+(grade * 100).toPrecision(4) + "%";
             ses.grade = grade;
             postLTI(ses,"");
             break;
